@@ -1,10 +1,10 @@
 # asteroid
 Asteroid Bot
 
-### Authors
+## Authors
 Starlight <developerstarlight@gmail.com>
 
-### Installation
+## Installation
 - Dependencies
   - discord.js
   - ts-node
@@ -13,5 +13,5 @@ Starlight <developerstarlight@gmail.com>
 - Rename `const.inc.json` to `const.json`
 - Then, edit `const.json`
 
-### License
+## License
 GNU Lesser General Public License v3.0
