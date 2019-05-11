@@ -6,7 +6,8 @@
     "esModuleInterop": true,
     "types": ["node", "express"],
     "outDir": "dist",
-    "rootDir": "src/**/*"
+    "rootDir": "src/**/*",
+    "resolveJsonModule": true
   },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]
