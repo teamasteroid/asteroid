@@ -1,0 +1,16 @@
+{
+  "name": "asteroid",
+  "version": "1.0.0",
+  "description": "Asteroid Official Discord Bot",
+  "main": "main.ts",
+  "repository": "https://github.com/teamasteroid/asteroid",
+  "author": "5tarlight <developerstarlight@gmail.com>",
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "discord.js": "^11.4.2",
+    "express": "^4.16.4",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  }
+}
