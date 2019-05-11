@@ -4,6 +4,10 @@
     "module": "commonjs",
     "strict": true, 
     "esModuleInterop": true,
-    "types": ["node", "express"]
-  }
+    "types": ["node", "express"],
+    "outDir": "dist",
+    "rootDir": "src/**/*"
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
 }
