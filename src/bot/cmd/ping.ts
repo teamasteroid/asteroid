@@ -1,5 +1,6 @@
 import { Client, Message, RichEmbed } from "discord.js";
 import { info } from "../../SLog";
+import Bot from '../bot'
 
 class Ping {
   static ping(client: Client, msg: Message, args?: string[]): void {
@@ -9,6 +10,10 @@ class Ping {
 
     info(msg.author.id + ' : ping')
     msg.channel.send(embed)
+  }
+
+  static getPing(): number {
+    return Math.round(Bot.client.ping)
   }
 }
 

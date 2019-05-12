@@ -1,5 +1,5 @@
 import { Client, Message } from 'discord.js'
-import { info } from '../SLog';
+import { err, success } from '../SLog';
 import { bot } from '../config/const.json'
 import Command from './command'
 
@@ -12,7 +12,27 @@ class Bot {
     Command.init()
 
     Bot.client.on('ready', () => {
-      info(`Logged in as ${Bot.client.user.tag}`)
+      success(`Logged in as ${Bot.client.user.tag}`)
+
+      setInterval(async () => {
+        const statuslist = [
+          `'${Bot.prefix}help'`,
+          `${Bot.client.guilds.size} servers / ${Bot.client.users.size} users`
+        ];
+        const random = Math.floor(Math.random() * statuslist.length);
+    
+        try {
+          await Bot.client.user.setPresence({
+            game: {
+              name: `${statuslist[random]}`,
+              type: "PLAYING"
+            },
+            status: "online"
+          });
+        } catch (error) {
+          err(error);
+        }
+      }, 15000);
     })
     
     Bot.client.on('message', (msg: Message) => {

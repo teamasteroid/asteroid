@@ -1,5 +1,5 @@
 import express, { Application, Router, static as ss, Response, Request } from "express";
-import { info } from "../SLog";
+import { info, success } from "../SLog";
 
 class Web {
   static app: Application
@@ -23,7 +23,7 @@ class Web {
     Web.app.use(Web.router)
 
     Web.app.listen(Web.app.get('port'), () => {
-      info(`Express server is online on port ${Web.app.get('port')}`)
+      success(`Express server is online on port ${Web.app.get('port')}`)
     })
   }
 }
