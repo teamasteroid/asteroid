@@ -1,5 +1,6 @@
-import express, { Application, Router, static as ss, Response, Request } from "express";
-import { info, success } from "../SLog";
+import express, { Application, Router, static as ss } from "express";
+import { success } from "../SLog";
+import { Portal } from './routes'
 
 class Web {
   static app: Application
@@ -13,11 +14,7 @@ class Web {
     Web.app.set('views', __dirname + '/public/views')
     Web.app.set('view engine', 'pug')
 
-    Web.router.route('/').get((req: Request, res: Response) => {
-      info(req.ip + ' : portal')
-      
-      res.end('<h1>Hello World!</h1>')
-    })
+    Web.router.route('/').get(Portal.join)
 
     Web.app.use('/', ss(__dirname + '/public'))
     Web.app.use(Web.router)
