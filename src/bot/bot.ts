@@ -16,6 +16,9 @@ class Bot {
     })
     
     Bot.client.on('message', (msg: Message) => {
+      if(msg.channel.type == 'dm') return
+      if(msg.content.startsWith(Bot.prefix)) return
+
       const cmd = msg.content.slice(Bot.prefix.length, msg.content.length).split(' ')[0]
       const arg = msg.content.slice(Bot.prefix.length, msg.content.length).split(' ')
       const args = arg.slice(1, msg.content.slice(Bot.prefix.length, msg.content.length).split(' ').length)
