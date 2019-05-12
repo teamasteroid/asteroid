@@ -1,4 +1,4 @@
-import express, { Application, Router, Response, Request } from "express";
+import express, { Application, Router, static as ss, Response, Request } from "express";
 import { info } from "../SLog";
 
 class Web {
@@ -10,6 +10,8 @@ class Web {
     Web.router = Router()
 
     Web.app.set('port', 80)
+    Web.app.set('views', __dirname + '/public/views')
+    Web.app.set('view engine', 'pug')
 
     Web.router.route('/').get((req: Request, res: Response) => {
       info(req.ip + ' : portal')
@@ -17,6 +19,7 @@ class Web {
       res.end('<h1>Hello World!</h1>')
     })
 
+    Web.app.use('/', ss(__dirname + '/public'))
     Web.app.use(Web.router)
 
     Web.app.listen(Web.app.get('port'), () => {
