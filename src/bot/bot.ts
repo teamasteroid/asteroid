@@ -48,6 +48,14 @@ class Bot {
     })
     Bot.client.login(bot.token)
   }
+
+  static getServers(): number {
+    return Bot.client.guilds.size
+  }
+
+  static getUsers(): number {
+    return Bot.client.users.size
+  }
 }
 
 export default Bot
