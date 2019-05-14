@@ -1,0 +1,9 @@
+body {
+  background-color: #23272A;
+  text-align: center;
+}
+
+body h1, body h2, body h3 {
+  color: white;
+  font-family: poppins, Arial, Helvetica, sans-serif;
+}
