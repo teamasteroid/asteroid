@@ -18,6 +18,8 @@ class Help extends CE {
 
       embed.addField(ce.desc.name, ce.desc.description)
     })
+
+    msg.channel.send(embed)
   }
 
   desc = {
