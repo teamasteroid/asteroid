@@ -18,7 +18,7 @@ class Ping extends CE{
 
   desc = {
     name: "ping",
-    description: "Display ping of bot",
+    description: "봇의 핑을 보여줍니다.",
     aliases: ['핑', 'pong']
   }
 }

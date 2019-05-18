@@ -40,7 +40,7 @@ class Uptime extends CE {
 
   desc = {
     name: "uptime",
-    description: "Display uptime of bot",
+    description: "봇이 가동된 시간을 보여 줍니다.",
     aliases: ['업타임', 'ut']
   }
 }
