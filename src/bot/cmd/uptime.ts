@@ -36,8 +36,6 @@ class Uptime extends CE {
     msg.channel.send(new RichEmbed()
       .setTitle('업타임')
       .addField(uptime, '봇이 가동된 시간입니다.'))
-
-    info(msg.author.id + " : uptime")
   }
 
   desc = {

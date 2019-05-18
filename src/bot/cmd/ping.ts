@@ -9,7 +9,6 @@ class Ping extends CE{
       .setTitle(`**${Math.round(client.ping)}** ms`)
       .setDescription(`핑은 봇이 돌아가는 서버에서 측정되었습니다.`)
 
-    info(msg.author.id + ' : ping')
     msg.channel.send(embed)
   }
 

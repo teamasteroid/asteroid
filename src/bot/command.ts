@@ -2,6 +2,7 @@ import { Client, Message } from "discord.js";
 import { Map } from 'immutable'
 import { Ping, Uptime, ServerList } from './cmd'
 import CE from "./cmd/CE";
+import { info } from "../SLog";
 
 type cmdFuncType = (client: Client, msg: Message, args?: string[]) => void
 
@@ -33,6 +34,7 @@ class Command {
     const cmdExe = Command.cmds.get(command)
 
     if (cmdExe) {
+      info(msg.author.id + ' : ' + command)
       cmdExe.command(client, msg, args)
     } else
       return
