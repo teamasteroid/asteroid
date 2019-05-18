@@ -1,2 +1,3 @@
-export { default as Ping } from './ping'
-export { default as Uptime } from './uptime'
+export { default as Ping } from './Ping'
+export { default as Uptime } from './Uptime'
+export { default as ServerList } from './ServerList'
