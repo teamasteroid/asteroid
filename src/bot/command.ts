@@ -4,19 +4,17 @@ import { Ping, Uptime, ServerList } from './cmd'
 import CE from "./cmd/CE";
 import { info } from "../SLog";
 
-type cmdFuncType = (client: Client, msg: Message, args?: string[]) => void
-
 class Command {
   static cmds: Map<string, CE> = Map({})
 
+  static ces: CE[] = [
+    new Ping(),
+    new Uptime(),
+    new ServerList()
+  ]
   static init() {
-    const ces: CE[] = [
-      new Ping(),
-      new Uptime(),
-      new ServerList()
-    ]
 
-    ces.forEach(ce => {
+    Command.ces.forEach(ce => {
       Command.set(ce.desc.name, ce)
 
       const aliases = ce.desc.aliases
@@ -38,6 +36,10 @@ class Command {
       cmdExe.command(client, msg, args)
     } else
       return
+  }
+
+  static getCes(): CE[] {
+    return Command.ces
   }
 }
 
