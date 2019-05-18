@@ -16,7 +16,7 @@ class Help extends CE {
           .setTitle('도움말 (계속)')
       }
 
-      embed.addField(ce.desc.name, ce.desc.description)
+      embed.addField(ce.desc.name, ce.desc.description, true)
     })
 
     msg.channel.send(embed)
