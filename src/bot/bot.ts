@@ -1,4 +1,4 @@
-import { Client, Message } from 'discord.js'
+import { Client, Message, RichEmbed } from 'discord.js'
 import { err, success } from '../SLog';
 import { bot } from '../config/const.json'
 import Command from './command'
@@ -36,7 +36,14 @@ class Bot {
     })
     
     Bot.client.on('message', (msg: Message) => {
-      if(msg.channel.type == 'dm') return
+      if(msg.channel.type == 'dm') {
+        msg.channel.send(new RichEmbed()
+          .setColor('#f00')
+          .setTitle('에스터로이드 봇은 DM에서 작동하지 않습니다.')
+          .addField('봇을 서버에 초대해 사용해 보세요.', 'https://discordapp.com/oauth2/authorize?client_id=576763498558652425&permissions=8&scope=bot')
+        )
+        return
+      }
       if(!msg.content.startsWith(Bot.prefix)) return
 
       const cmd = msg.content.slice(Bot.prefix.length, msg.content.length).split(' ')[0]
