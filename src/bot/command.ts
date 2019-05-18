@@ -10,7 +10,9 @@ class Command {
 
   static init() {
     Command.cmds = Command.cmds.set('ping', new Ping())
+    Command.cmds = Command.cmds.set('핑', new Ping())
     Command.cmds = Command.cmds.set('uptime', new Uptime())
+    Command.cmds = Command.cmds.set('업타임', new Uptime())
   }
 
   static execute(command: string, client: Client, msg: Message, args?: string[]): void {
