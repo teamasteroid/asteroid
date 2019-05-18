@@ -15,7 +15,7 @@ class ServerList extends CE{
   }
   desc = {
     name: "serverlist",
-    description: "Display server list",
+    description: "봇이 있는 서버의 리스트를 보여줍니다.",
     aliases: ['ls', '서버리스트']
   }
 }
