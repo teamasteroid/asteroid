@@ -39,6 +39,12 @@ class Uptime extends CE {
 
     info(msg.author.id + " : uptime")
   }
+
+  desc = {
+    name: "uptime",
+    description: "Display uptime of bot",
+    aliases: ['업타임', 'ut']
+  }
 }
 
 export default Uptime

@@ -13,6 +13,11 @@ class ServerList extends CE{
         .setImage(bicon)
     msg.channel.send(botembed);
   }
+  desc = {
+    name: "serverlist",
+    description: "Display server list",
+    aliases: ['ls', '서버리스트']
+  }
 }
 
 export default ServerList

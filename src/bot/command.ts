@@ -9,14 +9,20 @@ class Command {
   static cmds: Map<string, CE> = Map({})
 
   static init() {
-    Command.set('ping', new Ping())
-    Command.set('핑', new Ping())
-    Command.set('uptime', new Uptime())
-    Command.set('업타임', new Uptime())
-    Command.set('serverlist', new ServerList())
-    Command.set('sl', new ServerList())
-    Command.set('서버리스트', new ServerList())
-    Command.set('서버', new ServerList())
+    const ces: CE[] = [
+      new Ping(),
+      new Uptime(),
+      new ServerList()
+    ]
+
+    ces.forEach(ce => {
+      Command.set(ce.desc.name, ce)
+
+      const aliases = ce.desc.aliases
+      aliases.forEach(alias => {
+        Command.set(alias, ce)
+      })
+    })
   }
 
   static set(cmd: string, ce: CE) {

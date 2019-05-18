@@ -16,6 +16,12 @@ class Ping extends CE{
   getPing(): number {
     return Math.round(Bot.client.ping)
   }
+
+  desc = {
+    name: "ping",
+    description: "Display ping of bot",
+    aliases: ['핑', 'pong']
+  }
 }
 
 export default Ping
