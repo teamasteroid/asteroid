@@ -1,7 +1,7 @@
 import { Client, Message, RichEmbed } from "discord.js";
-import { info } from "../../SLog";
-import Bot from '../bot'
-import CE from "./CE";
+import { info } from "../../../SLog";
+import Bot from '../../bot'
+import CE from "../CE";
 
 class Ping extends CE{
   command(client: Client, msg: Message, args?: string[]): void {

@@ -1,6 +1,6 @@
 import { Client, Message, RichEmbed } from "discord.js";
-import { info } from "../../SLog";
-import CE from "./CE";
+import { info } from "../../../SLog";
+import CE from "../CE";
 
 export interface uptimeValue {
   d: number,

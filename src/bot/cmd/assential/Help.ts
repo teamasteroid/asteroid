@@ -1,6 +1,6 @@
 import { Client, Message, RichEmbed } from "discord.js";
-import CE from "./CE";
-import Command from '../command'
+import CE from "../CE";
+import Command from '../../command'
 
 class Help extends CE {
   command(client: Client, msg: Message, args?: string[]): void {

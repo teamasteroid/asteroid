@@ -1,5 +1,5 @@
 import { Client, Message, RichEmbed } from "discord.js";
-import CE from "./CE";
+import CE from "../CE";
 
 class ServerList extends CE{
   command(client: Client, msg: Message, args: string[]) {
