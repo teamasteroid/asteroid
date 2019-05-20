@@ -24,7 +24,7 @@ class Help extends CE {
 
   desc = {
     name: "help",
-    description: "도움말을 보여줍니다..",
+    description: "도움말을 보여줍니다.",
     aliases: ['도움', '도움말', '헬프']
   }
 }
