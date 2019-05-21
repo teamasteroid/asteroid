@@ -1,11 +1,12 @@
 import CE from "../CE";
 import { Client, Message, RichEmbed } from "discord.js";
 import DB from "./DB";
+import { err } from '../../../SLog'
 
 class AgreeTos extends CE {
   command(client: Client, msg: Message, args: string[]) {
-    DB.query(`INSERT INTO user VALUES (?, '{}', ?)`, [msg.author.id, 0], (err, results, fields) => {
-      if(err) {
+    DB.query(`INSERT INTO user VALUES (?, '{}', ?)`, [msg.author.id, 0], (error, results, fields) => {
+      if(error) {
         const embed = new RichEmbed()
           .setTitle('에러 발생')
           .setColor('#f22')
@@ -13,7 +14,7 @@ class AgreeTos extends CE {
 
           msg.channel.send(embed)
 
-        console.error(err.stack || err.toString())
+        err(error.stack || error.toString())
         return
       }
 
