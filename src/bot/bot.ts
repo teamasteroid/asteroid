@@ -16,8 +16,8 @@ class Bot {
 
       setInterval(async () => {
         const statuslist = [
-          `'${Bot.prefix}help'`,
-          `${Bot.client.guilds.size} servers / ${Bot.client.users.size} users`
+          `5tarlight.kro.kr:90 | ${Bot.prefix}help`,
+          `${Bot.client.guilds.size} servers | ${Bot.client.users.size} users`
         ];
         const random = Math.floor(Math.random() * statuslist.length);
     
