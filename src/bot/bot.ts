@@ -2,6 +2,7 @@ import { Client, Message, RichEmbed } from 'discord.js'
 import { err, success } from '../SLog';
 import { bot } from '../config/const.json'
 import Command from './command'
+import DB from './cmd/rpg/DB';
 
 class Bot {
   static client: Client
@@ -53,6 +54,7 @@ class Bot {
       Command.execute(cmd, Bot.client, msg, args)
     
     })
+    DB.init()
     Bot.client.login(bot.token)
   }
 
