@@ -46,9 +46,9 @@ class Bot {
       }
       if(!msg.content.startsWith(Bot.prefix)) return
 
-      const cmd = msg.content.slice(Bot.prefix.length, msg.content.length).split(' ')[0]
       const arg = msg.content.slice(Bot.prefix.length, msg.content.length).split(' ')
-      const args = arg.slice(1, msg.content.slice(Bot.prefix.length, msg.content.length).split(' ').length)
+      const cmd = arg[0]
+      const args = arg.slice(1, arg.length)
 
       Command.execute(cmd, Bot.client, msg, args)
     
