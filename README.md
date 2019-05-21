@@ -6,13 +6,11 @@ Starlight <developerstarlight@gmail.com>
 
 ## Installation
 
-1. run `yarn` or `npm install`
-  1.1 If you are using Linux, use `sudo`
+1. run `yarn` or `npm install` (If you are using Linux, use `sudo`)
 2. Rename `const.inc.json` to `const.json`
 3. Edit `const.json`
 4. Run `db.sql` to your MariaDB Server
-5. `yarn start` or `npm start`
-  5.1 If you are using Linux, use `sudo`
+5. `yarn start` or `npm start` (If you are using Linux, use `sudo`)
 
 ## Dependencies
   - discord.js
