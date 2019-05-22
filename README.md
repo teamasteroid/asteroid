@@ -1,6 +1,5 @@
 # asteroid
-Asteroid Bot
-[![Build status](https://ci.appveyor.com/api/projects/status/i4vehpafbxc4miha?svg=true)(https://ci.appveyor.com/project/5tarlight/asteroid)
+[![Build status](https://ci.appveyor.com/api/projects/status/i4vehpafbxc4miha?svg=true)](https://ci.appveyor.com/project/5tarlight/asteroid)
 ## Authors
 Starlight <developerstarlight@gmail.com>
 
