@@ -20,6 +20,7 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "start": "ts-node src/main"
+    "start": "set PORT=80 && ts-node src/main",
+    "test": "set PORT=3000 && ts-node src/main"
   }
 }

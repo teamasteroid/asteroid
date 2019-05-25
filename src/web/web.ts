@@ -10,7 +10,7 @@ class Web {
     Web.app = express()
     Web.router = Router()
 
-    Web.app.set('port', 80)
+    Web.app.set('port', process.env.port || 80)
     Web.app.set('views', __dirname + '/public/views')
     Web.app.set('view engine', 'pug')
 
