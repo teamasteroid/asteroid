@@ -1,6 +1,6 @@
 import { Client, Message } from "discord.js";
 import { Map } from 'immutable'
-import { Ping, Uptime, ServerList, Help, Tos, AT, Info } from './cmd'
+import { Ping, Uptime, ServerList, Help, Tos, AT, Info, Notice } from './cmd'
 import CE from "./cmd/CE";
 import { info } from "../SLog";
 
@@ -14,7 +14,8 @@ class Command {
     new Help(),
     new Tos(),
     new AT(),
-    new Info()
+    new Info(),
+    new Notice()
   ]
   static init() {
 
