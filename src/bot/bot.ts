@@ -56,6 +56,12 @@ class Bot {
     })
     DB.init()
     Bot.client.login(bot.token)
+
+    setInterval(() => {
+      Bot.client.destroy().then(() => {
+        Bot.client.login(bot.token)
+      })
+    }, 60 * 60 * 1000)
   }
 
   static getServers(): number {
