@@ -1,5 +1,5 @@
 import { Client, Message, RichEmbed } from 'discord.js'
-import { err, success } from '../SLog';
+import { err, success, info } from '../SLog';
 import { bot } from '../config/const.json'
 import Command from './command'
 import DB from './cmd/rpg/DB';
@@ -58,8 +58,10 @@ class Bot {
     Bot.client.login(bot.token)
 
     setInterval(() => {
+      info('Auto rebooting...')
       Bot.client.destroy().then(() => {
         Bot.client.login(bot.token)
+        success('Auto reboot success!')
       })
     }, 60 * 60 * 1000)
   }
