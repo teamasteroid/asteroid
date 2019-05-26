@@ -47,7 +47,12 @@ class Bot {
       }
       if(!msg.content.startsWith(Bot.prefix)) return
 
-      const arg = msg.content.slice(Bot.prefix.length, msg.content.length).split(' ')
+      const arg: string[] = []
+      msg.content.slice(Bot.prefix.length, msg.content.length).split('\n').forEach(s => {
+        s.split(' ').forEach(c => {
+          arg.push(c)
+        })
+      })
       const cmd = arg[0]
       const args = arg.slice(1, arg.length)
 
