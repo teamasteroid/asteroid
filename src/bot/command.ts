@@ -4,22 +4,33 @@ import { Ping, Uptime, ServerList, Help, Tos, AT, Info, Notice } from './cmd'
 import CE from "./cmd/CE";
 import { info } from "../SLog";
 
+interface cmdType {
+  assential: CE[],
+  admin: CE[],
+  rpg: CE[]
+}
+
 class Command {
   static cmds: Map<string, CE> = Map({})
 
-  static ces: CE[] = [
+  static assential: CE[] = [
     new Ping(),
     new Uptime(),
     new ServerList(),
     new Help(),
+  ]
+
+  static admin: CE[] = [
+    new Notice()
+  ]
+  static rpg: CE[] = [
     new Tos(),
     new AT(),
-    new Info(),
-    new Notice()
+    new Info()
   ]
   static init() {
 
-    Command.ces.forEach(ce => {
+    Command.assential.concat(Command.admin, Command.rpg).forEach(ce => {
       Command.set(ce.desc.name, ce)
 
       const aliases = ce.desc.aliases
@@ -43,8 +54,12 @@ class Command {
       return
   }
 
-  static getCes(): CE[] {
-    return Command.ces
+  static getCes(): cmdType {
+    return {
+      assential: Command.assential,
+      admin: Command.admin,
+      rpg: Command.rpg
+    }
   }
 }
 
