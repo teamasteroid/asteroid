@@ -21,12 +21,7 @@ class Notice extends CE {
 
       client.guilds.forEach(guild => {
         const gchannel = guild.channels.find(
-          val => (
-                    val.name.endsWith('공지')
-                    || val.name.endsWith('notice')
-                    || val.name.startsWith('공지')
-                    || val.name.startsWith('notice')
-                  ) && val instanceof TextChannel
+          val => (val.name.includes('공지') || val.name.includes('notice')) && val instanceof TextChannel
         )
         
         if(gchannel instanceof TextChannel) {
