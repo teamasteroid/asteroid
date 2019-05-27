@@ -45,7 +45,7 @@ class Bot {
       const arg: string[] = []
       msg.content.slice(Bot.prefix.length, msg.content.length).split('\n').forEach(s => {
         s.split(' ').forEach(c => {
-          arg.push(c)
+          arg.push(c.trim())
         })
       })
       const cmd = arg[0]
