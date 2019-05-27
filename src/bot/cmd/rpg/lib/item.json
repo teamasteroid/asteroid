@@ -1,0 +1,41 @@
+{
+  "RESOURCE": {
+    "WOOD": "나무",
+    "STONE": "돌",
+    "IRON_ORE": "철 광석",
+    "GOLD_ORE": "금 광석",
+    "IRON": "철",
+    "GOLD": "금",
+    "COAL": "석탄",
+    "CRUDE_OIL": "원유",
+    "COPPER_ORE": "구리 광석",
+    "COPPER": "구리",
+    "TIN_ORE": "주석 광석",
+    "TIN": "주석",
+    "ALUMINIUM_ORE": "알루미늄 광석",
+    "ALIMINIUM": "알루미늄",
+    "TITANIUM_ORE": "티타늄 광석",
+    "TITANIUM": "티타늄",
+    "DIAMOND_ORE": "다이아몬드 광석",
+    "DIAMOND": "다이아몬드",
+    "SAND": "모래"
+  },
+  "TOOL": {
+    "WOODEN_PICKAXE": "나무 곡괭이",
+    "WOODEN_SWORD": "나무 검",
+    "WOODEN_AXE": "나무 도끼",
+    "STONE_PICKAXE": "돌 곡괭이",
+    "STONE_SWORD": "돌 검",
+    "STONE_AXE": "돌 도끼",
+    "IRON_PICKAXE": "철 곡괭이",
+    "IRON_SWORD": "철 검",
+    "IRON_AXE": "철 도끼",
+    "DIAMOND_PICKAXE": "다이아몬드 곡괭이",
+    "DIAMOND_SWORD": "다이아몬드 검",
+    "DIAMOND_AXE": "다이아몬드 도끼",
+    "TITANIUM_PICKAXE": "티타늄 곡괭이",
+    "TITANIUM_SWORD": "티타늄 검",
+    "TITANIUM_AXE": "티타늄 도끼",
+    "BLAST_FURNACE": "용광로"
+  }
+}
