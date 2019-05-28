@@ -15,7 +15,7 @@ class ItemInfo extends CE {
     }
 
     const ii = args[0].toUpperCase()
-
+    // 아이템 매니저로부터 아이템목록을 받아 검사하기
     if(items.RESOURCE["WOOD"]) {
 
     }
