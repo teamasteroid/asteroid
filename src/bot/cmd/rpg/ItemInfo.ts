@@ -1,6 +1,6 @@
 import CE from "../CE";
 import { Client, Message, RichEmbed } from "discord.js";
-import * as items from './lib/item.json'
+import ItemManager from "./lib/ItemManager";
 
 class ItemInfo extends CE {
   command(client: Client, msg: Message, args: string[]) {
@@ -8,17 +8,46 @@ class ItemInfo extends CE {
       const embed = new RichEmbed()
         .setTitle('사용법')
         .addField('$ii <아이템 id>', '해당 아이템의 정보를 봅니다.')
-        .addField('$ii <아이템 이름>', '해당 아이템의 정보를 봅니다 (추천하지 않음)')
 
       msg.channel.send(embed)
       return
     }
 
     const ii = args[0].toUpperCase()
-    // 아이템 매니저로부터 아이템목록을 받아 검사하기
-    if(items.RESOURCE["WOOD"]) {
+    const items = ItemManager.getItemList()
+    if(items.getIn(['RESOURCE', ii])) {
+      // Requested item which is reousrce
+      const embed = new RichEmbed()
+        .setTitle('오류')
+        .setDescription('자원류는 검색할 수 없습니다.')
 
+      msg.channel.send(embed)
+      return
     }
+
+    const item = items.getIn(['TOOL', ii])
+    if(!item) {
+      ///Not Found
+      const embed = new RichEmbed()
+        .setTitle('실패')
+        .setDescription('해당 아이템을 찾을 수 없습니다.')
+
+      msg.channel.send(embed)
+      return
+    }
+
+    const required = item.toJS().require
+    let rmsg: string = ''
+    required.forEach((re: any) => {
+      rmsg += `${re.item} ${re.quantity}개 `
+    })
+
+    const embed = new RichEmbed()
+      .setTitle('아이템 정보')
+      .addField(`이름`, item.toJS().name)
+      .addField(`필요 사항`, rmsg)
+
+    msg.channel.send(embed)
   }
 
   desc = {
