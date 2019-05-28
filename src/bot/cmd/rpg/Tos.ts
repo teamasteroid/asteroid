@@ -15,7 +15,7 @@ class Tos extends CE {
     const embed = new RichEmbed()
       .setTitle('Asteroid Terms of Service')
       .addField(tos, '봇을 이용하려면 약관에 동의해야 합니다.')
-      .setDescription('`$tosagree`명령을 통해 약관에 동의 하실 수 있습니다.')
+      .setDescription('`$동의`명령을 통해 약관에 동의 하실 수 있습니다.')
     
     msg.channel.send(embed)
   }
