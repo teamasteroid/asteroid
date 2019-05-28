@@ -3,6 +3,7 @@ import { err, success, info } from '../SLog';
 import { bot } from '../config/const.json'
 import Command from './command'
 import DB from './cmd/rpg/DB';
+import ItemManager from './cmd/rpg/lib/ItemManager';
 
 class Bot {
   static client: Client
@@ -11,6 +12,7 @@ class Bot {
   static login(): void {
     Bot.client = new Client()
     Command.init()
+    ItemManager.init()
 
     Bot.client.on('ready', () => {
       success(`Logged in as ${Bot.client.user.tag}`)
