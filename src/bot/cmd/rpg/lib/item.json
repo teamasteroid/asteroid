@@ -21,21 +21,113 @@
     "SAND": "모래"
   },
   "TOOL": {
-    "WOODEN_PICKAXE": "나무 곡괭이",
-    "WOODEN_SWORD": "나무 검",
-    "WOODEN_AXE": "나무 도끼",
-    "STONE_PICKAXE": "돌 곡괭이",
-    "STONE_SWORD": "돌 검",
-    "STONE_AXE": "돌 도끼",
-    "IRON_PICKAXE": "철 곡괭이",
-    "IRON_SWORD": "철 검",
-    "IRON_AXE": "철 도끼",
-    "DIAMOND_PICKAXE": "다이아몬드 곡괭이",
-    "DIAMOND_SWORD": "다이아몬드 검",
-    "DIAMOND_AXE": "다이아몬드 도끼",
-    "TITANIUM_PICKAXE": "티타늄 곡괭이",
-    "TITANIUM_SWORD": "티타늄 검",
-    "TITANIUM_AXE": "티타늄 도끼",
-    "BLAST_FURNACE": "용광로"
+    "WOODEN_PICKAXE": {
+      "name" : "나무 곡괭이",
+      "require": [
+        {"item": "WOOD", "quantity": 5}
+      ]
+    },
+    "WOODEN_SWORD": {
+      "name": "나무 검",
+      "require": [
+        {"item": "WOOD", "quantity": 4}
+      ]
+    },
+    "WOODEN_AXE": {
+      "name": "나무 도끼",
+      "require": [
+        {"item": "WOOD", "quantity": 5}
+      ]
+    },
+    "STONE_PICKAXE": {
+      "name": "돌 곡괭이",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "STONE", "quantity": 3}
+      ]
+    },
+    "STONE_SWORD": {
+      "name": "돌 검",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "STONE", "quantity": 2}
+      ]
+    },
+    "STONE_AXE": {
+      "name": "돌 도끼",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "STONE", "quantity": 3}
+      ]
+    },
+    "IRON_PICKAXE": {
+      "name": "철 곡괭이",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "IRON", "quantity": 3}
+      ]
+    },
+    "IRON_SWORD": {
+      "name": "철 검",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "IRON", "quantity": 2}
+      ]
+    },
+    "IRON_AXE": {
+      "name": "철 도끼",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "IRON", "quantity": 3}
+      ]
+    },
+    "TITANIUM_PICKAXE": {
+      "name": "티타늄 곡괭이",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "TITANIUM", "quantity": 3}
+      ]
+    },
+    "TITANIUM_SWORD": {
+      "name": "티타늄 검",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "TITANIUM", "quantity": 2}
+      ]
+    },
+    "TITANIUM_AXE": {
+      "name": "티타늄 도끼",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "TITANIUM", "quantity": 3}
+      ]
+    },
+    "DIAMOND_PICKAXE": {
+      "name": "다이아몬드 곡괭이",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "DIAMOND", "quantity": 3}
+      ]
+    },
+    "DIAMOND_SWORD": {
+      "name": "다이아몬드 검",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "DIAMOND", "quantity": 2}
+      ]
+    },
+    "DIAMOND_AXE": {
+      "name": "다이아몬드 도끼",
+      "require": [
+        {"item": "WOOD", "quantity": 2},
+        {"item": "DIAMOND", "quantity": 3}
+      ]
+    },
+    "BLAST_FURNACE": {
+      "name": "용광로",
+      "require": [
+        {"item": "STONE", "quantity": 8}
+      ]
+    }
   }
 }
