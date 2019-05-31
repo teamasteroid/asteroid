@@ -39,7 +39,7 @@ class ItemInfo extends CE {
     const required = item.toJS().require
     let rmsg: string = ''
     required.forEach((re: any) => {
-      rmsg += `${re.item} ${re.quantity}개 `
+      rmsg += `${items.getIn(['RESOURCE', re.item])} ${re.quantity}개 `
     })
 
     const embed = new RichEmbed()
