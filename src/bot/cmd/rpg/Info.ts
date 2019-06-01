@@ -21,7 +21,7 @@ class Info extends CE {
         err(error.stack || error.toString())
       }
 
-      if(results.length <= 0) {
+      if(results.length < 1) {
         const embed = new RichEmbed()
           .setTitle('실패')
           .addField('해당 유저의 정보가 없습니다', '`$tos`를 통해 약관에 동의 해 주십시오.')
