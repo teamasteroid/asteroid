@@ -3,13 +3,16 @@
 ## Authors
 Starlight <developerstarlight@gmail.com>
 
-## Installation
+## Requirements
+- Node.js (with npm or yarn)
+- MariaDB (MySQL)
 
-1. run `yarn` or `npm install` (If you are using Linux, use `sudo`)
-2. Rename `const.inc.json` to `const.json`
+## Installation
+1. run `yarn` or `npm install` (If you are using Linux, use `sudo yarn` or `sudo npm install)
+2. Rename `const.inc.json` into `const.json`
 3. Edit `const.json`
 4. Run `db.sql` to your MariaDB Server
-5. `yarn start` or `npm start` (If you are using Linux, use `sudo`)
+5. `yarn start` or `npm start` (If you are using Linux, use `sudo yarn start` or `sudo npm start`)
 
 ## Dependencies
   - discord.js
@@ -18,7 +21,6 @@ Starlight <developerstarlight@gmail.com>
   - typescript
   - colors
   - ts-node
-  - etc...
 
 ## License
 GNU Lesser General Public License v3.0
