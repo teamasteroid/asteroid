@@ -1,12 +1,16 @@
 {
   "bot": {
-    "token": "BOT_TOKEN"
+    "token": "BOT TOKEN"
   },
   "db": {
     "host": "localhost",
     "port": 3306,
     "database": "asteroid",
     "user": "root",
-    "password": "DB_PASSWORD"
+    "password": "DB PASSWORD"
+  },
+  "oauth": {
+    "CLIENT_ID": "CLIENT ID",
+    "CLIENT_SECRET": "CLIENT SECRET"
   }
 }
