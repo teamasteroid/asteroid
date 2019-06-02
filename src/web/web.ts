@@ -17,12 +17,7 @@ class Web {
 
     const CLIENT_ID = oauth.CLIENT_ID
     const CLIENT_SECRET = oauth.CLIENT_SECRET
-    const REDIRECT = encodeURIComponent("http://5tarlight.kro.kr/oauth/callback/discord")
-
-    Web.router.route('/login').get((req: Request, res: Response) => {
-      res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT}&response_type=code&scope=identify`)
-    })
-
+    const REDIRECT = "/oauth/callback/discord"
 
     Web.router.route('/').get(Portal.join)
 
