@@ -36,7 +36,7 @@ class RegionInfo extends CE {
         .setTitle(region.name)
 
       region.available.forEach((a: any) => {
-        embed.addField(a.item, a.probability * 100 + "%")
+        embed.addField(a.item, a.probability * 100 + "%", true)
       })
 
       m.edit(embed)
