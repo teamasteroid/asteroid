@@ -19,7 +19,7 @@ class Web {
     Web.app.set('view engine', 'pug')
 
     // const CLIENT_ID = oauth.CLIENT_ID
-    const CLIENT_SECRET = oauth.CLIENT_SECRET
+    // const CLIENT_SECRET = oauth.CLIENT_SECRET
     // const REDIRECT = "http://5tarlight.kro.kr/oauth/callback/discord"
 
     // const scopes = ['identify']
@@ -42,7 +42,7 @@ class Web {
     // }))
 
     Web.app.use(session({
-      secret: CLIENT_SECRET,
+      secret: '!@#!@#%!@^*(@',
       resave: true,
       saveUninitialized: false
     }))
