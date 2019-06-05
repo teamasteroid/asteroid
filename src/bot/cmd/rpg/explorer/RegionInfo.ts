@@ -21,7 +21,7 @@ class RegionInfo extends CE {
   
       const regions = RegionManager.getItemList()
   
-      if(!regions.getIn([args[0]])) {
+      if(!regions.getIn([args[0].toUpperCase()])) {
         const embed = new RichEmbed()
           .setTitle('해당 지역을 찾을 수 없습니다.')
           .setColor('#ff3333')
@@ -30,7 +30,7 @@ class RegionInfo extends CE {
         return
       }
   
-      const region = regions.getIn([args[0]]).toJS()
+      const region = regions.getIn([args[0].toUpperCase()]).toJS()
   
       const embed = new RichEmbed()
         .setTitle(region.name)
