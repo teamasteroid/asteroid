@@ -1,6 +1,7 @@
 import CE from "../../CE";
 import { Client, Message, RichEmbed } from "discord.js";
 import RegionManager from "../lib/RegionManager";
+import ItemManager from "../lib/ItemManager";
 
 class RegionInfo extends CE {
   command(client: Client, msg: Message, args: string[]) {
@@ -20,6 +21,7 @@ class RegionInfo extends CE {
       }
   
       const regions = RegionManager.getItemList()
+      const items = ItemManager.getItemList()
   
       if(!regions.getIn([args[0].toUpperCase()])) {
         const embed = new RichEmbed()
@@ -36,7 +38,7 @@ class RegionInfo extends CE {
         .setTitle(region.name)
 
       region.available.forEach((a: any) => {
-        embed.addField(a.item, a.probability * 100 + "%", true)
+        embed.addField(items.getIn(['RESOURCE', a.item]), a.probability * 100 + "%", true)
       })
 
       m.edit(embed)
