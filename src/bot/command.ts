@@ -3,6 +3,7 @@ import { Map } from 'immutable'
 import { Ping, Uptime, ServerList, Help, Tos, AT, Info, Notice, II } from './cmd'
 import CE from "./cmd/CE";
 import { info } from "../SLog";
+import RegionInfo from "./cmd/rpg/explorer/RegionInfo";
 
 interface cmdType {
   assential: CE[],
@@ -27,7 +28,8 @@ class Command {
     new Tos(),
     new AT(),
     new Info(),
-    new II()
+    new II(),
+    new RegionInfo()
   ]
   static init() {
 
