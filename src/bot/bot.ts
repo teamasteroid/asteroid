@@ -2,7 +2,7 @@ import { Client, Message, RichEmbed } from 'discord.js'
 import { err, success, info } from '../SLog';
 import { bot } from '../config/const.json'
 import Command from './command'
-import DB from './cmd/rpg/DB';
+import DB from './cmd/rpg/lib/DB';
 import ItemManager from './cmd/rpg/lib/ItemManager';
 
 class Bot {

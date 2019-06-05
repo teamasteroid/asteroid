@@ -1,4 +1,4 @@
-import CE from "../CE";
+import CE from "../../CE";
 import { Client, Message, RichEmbed } from "discord.js";
 
 class Tos extends CE {

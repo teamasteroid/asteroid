@@ -1,6 +1,6 @@
-import CE from "../CE";
+import CE from "../../CE";
 import { Client, Message, RichEmbed } from "discord.js";
-import ItemManager from "./lib/ItemManager";
+import ItemManager from "../lib/ItemManager";
 
 class ItemInfo extends CE {
   command(client: Client, msg: Message, args: string[]) {
