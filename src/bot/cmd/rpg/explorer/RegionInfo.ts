@@ -4,25 +4,43 @@ import RegionManager from "../lib/RegionManager";
 
 class RegionInfo extends CE {
   command(client: Client, msg: Message, args: string[]) {
-    if(!args || args.length < 1) {
+    msg.channel.send('검색중...').then(e => {
+      let m
+
+      if(e instanceof Message) m = e
+      else m = e[0]
+
+      if(!args || args.length < 1) {
+        const embed = new RichEmbed()
+          .setTitle('사용법')
+          .addField('$ri <지역 id>', '해당 지역의 정보를 봅니다.')
+  
+        m.edit(embed)
+        return
+      }
+  
+      const regions = RegionManager.getItemList()
+  
+      if(!regions.getIn([args[0]])) {
+        const embed = new RichEmbed()
+          .setTitle('해당 지역을 찾을 수 없습니다.')
+          .setColor('#ff3333')
+        
+        m.edit(embed)
+        return
+      }
+  
+      const region = regions.getIn([args[0]]).toJS()
+  
       const embed = new RichEmbed()
-        .setTitle('사용법')
-        .addField('$ri <지역 id>', '해당 지역의 정보를 봅니다.')
+        .setTitle(region.name)
 
-      msg.channel.send(embed)
-      return
-    }
+      region.available.forEach((a: any) => {
+        embed.addField(a.item, a.probability * 100 + "%")
+      })
 
-    const regions = RegionManager.getItemList()
-
-    if(!regions.getIn([args[0]])) {
-      const embed = new RichEmbed()
-        .setTitle('해당 지역을 찾을 수 없습니다.')
-        .setColor('#ff3333')
-      
-      msg.channel.send(embed)
-      return
-    }
+      m.edit(embed)
+    })
   }
 
   desc = {
