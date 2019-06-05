@@ -4,6 +4,7 @@ import { bot } from '../config/const.json'
 import Command from './command'
 import DB from './cmd/rpg/lib/DB';
 import ItemManager from './cmd/rpg/lib/ItemManager';
+import RegionManager from './cmd/rpg/lib/RegionManager';
 
 class Bot {
   static client: Client
@@ -13,6 +14,7 @@ class Bot {
     Bot.client = new Client()
     Command.init()
     ItemManager.init()
+    RegionManager.init()
 
     Bot.client.on('ready', () => {
       success(`Logged in as ${Bot.client.user.tag}`)
