@@ -1,8 +1,6 @@
 # asteroid
 [![Build status](https://ci.appveyor.com/api/projects/status/i4vehpafbxc4miha?svg=true)](https://ci.appveyor.com/project/5tarlight/asteroid)
 [![Issues](https://img.shields.io/github/issues/5tarlight/asteroid.svg)](http://github.com/5taright/asteroid/issues)
-[![Forks](https://img.shields.io/github/forks/5tarlight/asteroid.svg)](http://github.com/5tarlight/asteroid/forks)
-[![Stars](https://img.shields.io/github/stars/5tarlight/asteroid.svg)](http://github.com/5tarlight/asteroid/stars)
 [![License](https://img.shields.io/github/license/5tarlight/asteroid.svg)](http://github.com/5tarlight/asteroid/license)
 ## Authors
 Starlight <developerstarlight@gmail.com>
