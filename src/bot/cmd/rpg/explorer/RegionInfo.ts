@@ -22,17 +22,26 @@ class RegionInfo extends CE {
   
       const regions = RegionManager.getItemList()
       const items = ItemManager.getItemList()
+      let region
   
       if(!regions.getIn([args[0].toUpperCase()])) {
-        const embed = new RichEmbed()
-          .setTitle('해당 지역을 찾을 수 없습니다.')
-          .setColor('#ff3333')
-        
-        m.edit(embed)
-        return
-      }
+        Object.keys(regions.toJS()).map(k => regions.toJS()[k]).forEach((r: any) => {
+          if(r.name == args[0].toUpperCase().trim()) {
+            region = r
+          }
+        })
+
+        if(!region) {
+          const embed = new RichEmbed()
+            .setTitle('해당 지역을 찾을 수 없습니다.')
+            .setColor('#ff3333')
+          
+          m.edit(embed)
+          return
+        }
+      } else 
+        region = regions.getIn([args[0].toUpperCase()]).toJS()
   
-      const region = regions.getIn([args[0].toUpperCase()]).toJS()
   
       const embed = new RichEmbed()
         .setTitle(region.name)
