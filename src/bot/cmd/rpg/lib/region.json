@@ -12,5 +12,12 @@
       {"item": "TIN_ORE", "probability": 0.3},
       {"item": "ALUMINIUM_ORE", "probability": 0.5}
     ]
+  },
+  "MERCURY": {
+    "name": "수성",
+    "distance": 5800,
+    "available": [
+      {"item": "IRON_ORE", "probability": 0.9}
+    ]
   }
 }
