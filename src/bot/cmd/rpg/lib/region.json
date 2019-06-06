@@ -15,9 +15,16 @@
   },
   "MERCURY": {
     "name": "수성",
-    "distance": 5800,
+    "distance": 9000,
     "available": [
       {"item": "IRON_ORE", "probability": 0.9}
     ]
+  },
+  "VENES": {
+    "name": "금성",
+    "distance": 4000,
+    "available": [
+      {"item": "STONE", "probability": 1}
+    ] 
   }
 }
