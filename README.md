@@ -11,7 +11,7 @@ Starlight <developerstarlight@gmail.com>
 - MariaDB (MySQL)
 
 ## Installation
-1. run `yarn` or `npm install` (If you are using Linux, use `sudo yarn` or `sudo npm install)
+1. run `yarn` or `npm install` (If you are using Linux, use `sudo yarn` or `sudo npm install`)
 2. Rename `const.inc.json` into `const.json`
 3. Edit `const.json`
 4. Run `db.sql` to your MariaDB Server
