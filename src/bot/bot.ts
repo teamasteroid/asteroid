@@ -19,17 +19,10 @@ class Bot {
     Bot.client.on('ready', () => {
       success(`Logged in as ${Bot.client.user.tag}`)
 
-      setInterval(async () => {
-        const statuslist = [
-          `5tarlight.kro.kr | ${Bot.prefix}help`,
-          `${Bot.client.guilds.size} servers | ${Bot.client.users.size} users`
-        ];
-        const random = Math.floor(Math.random() * statuslist.length);
-    
-        try {
+      try {
           await Bot.client.user.setPresence({
             game: {
-              name: `${statuslist[random]}`,
+              name: `$help | 5tarlight.kro.kr`,
               type: "PLAYING"
             },
             status: "online"
@@ -37,7 +30,6 @@ class Bot {
         } catch (error) {
           err(error);
         }
-      }, 15000);
     })
     
     Bot.client.on('message', (msg: Message) => {
