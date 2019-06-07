@@ -16,7 +16,7 @@ class Bot {
     ItemManager.init()
     RegionManager.init()
 
-    Bot.client.on('ready', () => {
+    Bot.client.on('ready', async () => {
       success(`Logged in as ${Bot.client.user.tag}`)
 
       try {
