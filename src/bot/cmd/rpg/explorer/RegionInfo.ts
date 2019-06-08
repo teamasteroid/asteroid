@@ -42,7 +42,6 @@ class RegionInfo extends CE {
       } else 
         region = regions.getIn([args[0].toUpperCase()]).toJS()
   
-  
       const embed = new RichEmbed()
         .setTitle(region.name)
         .setDescription(`거리: ${region.distance}km`)
