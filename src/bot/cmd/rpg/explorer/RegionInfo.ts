@@ -45,6 +45,7 @@ class RegionInfo extends CE {
   
       const embed = new RichEmbed()
         .setTitle(region.name)
+        .setDescription(`거리: ${region.distance}km`)
 
       region.available.forEach((a: any) => {
         embed.addField(items.getIn(['RESOURCE', a.item]), a.probability * 100 + "%", true)
