@@ -32,7 +32,7 @@
     "distance": 7800,
     "available": [
       {"item": "STONE", "probability": 0.8},
-      {"item": "STONE", "probability": 0.2}
+      {"item": "IRON_ORE", "probability": 0.2}
     ]
   }
 }
