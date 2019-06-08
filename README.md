@@ -1,7 +1,7 @@
 # asteroid
 [![Author](https://img.shields.io/badge/author-5tarlight-orange.svg)](http://5tarlight.kro.kr)
 [![Build status](https://ci.appveyor.com/api/projects/status/i4vehpafbxc4miha?svg=true)](https://ci.appveyor.com/project/5tarlight/asteroid)
-[![Issues](https://img.shields.io/github/issues/5tarlight/asteroid.svg)](http://github.com/5taright/asteroid/issues)
+[![Issues](https://img.shields.io/github/issues/5tarlight/asteroid.svg)](https://github.com/5tarlight/asteroid/issues)
 [![License](https://img.shields.io/github/license/5tarlight/asteroid.svg)](https://github.com/5tarlight/asteroid/blob/master/LICENSE)
 ## Authors
 Starlight <developerstarlight@gmail.com>
