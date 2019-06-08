@@ -25,6 +25,14 @@
     "distance": 4000,
     "available": [
       {"item": "STONE", "probability": 1}
-    ] 
+    ]
+  },
+  "MARS": {
+    "name": "화성",
+    "distance": 7800,
+    "available": [
+      {"item": "STONE", "probability": 0.8},
+      {"item": "STONE", "probability": 0.2}
+    ]
   }
 }
