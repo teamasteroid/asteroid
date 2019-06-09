@@ -1,7 +1,7 @@
 import * as items from './item.json'
 import { fromJS } from 'immutable';
 import { User } from 'discord.js';
-import DB from './DB.js';
+import DB from './DB';
 import { err as error} from '../../../../SLog'
 
 class ItemManager {
