@@ -1,4 +1,4 @@
-import CE from "../../CE";
+import CE from "../CE";
 import { Client, Message, RichEmbed } from "discord.js";
 
 class SetItem extends CE {
@@ -21,3 +21,5 @@ class SetItem extends CE {
     aliases: ['si', '아이템설정']
   }
 }
+
+export default SetItem
