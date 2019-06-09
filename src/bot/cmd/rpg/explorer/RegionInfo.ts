@@ -14,7 +14,7 @@ class RegionInfo extends CE {
       if(!args || args.length < 1) {
         const embed = new RichEmbed()
           .setTitle('사용법')
-          .addField('$ri <지역 id>', '해당 지역의 정보를 봅니다.')
+          .addField('$ri <지역명>', '해당 지역의 정보를 봅니다.')
   
         m.edit(embed)
         return
