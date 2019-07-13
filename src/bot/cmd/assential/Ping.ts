@@ -1,5 +1,4 @@
 import { Client, Message, RichEmbed } from "discord.js";
-import { info } from "../../../SLog";
 import Bot from '../../bot'
 import CE from "../CE";
 

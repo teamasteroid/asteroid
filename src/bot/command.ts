@@ -2,8 +2,8 @@ import { Client, Message } from "discord.js";
 import { Map } from 'immutable'
 import { Ping, Uptime, ServerList, Help, Tos, AT, Info, Notice, II, SI } from './cmd'
 import CE from "./cmd/CE";
-import { info } from "../SLog";
 import RegionInfo from "./cmd/rpg/explorer/RegionInfo";
+import Logger from "../Logger";
 
 interface cmdType {
   assential: CE[],
@@ -52,7 +52,7 @@ class Command {
     const cmdExe = Command.cmds.get(command)
 
     if (cmdExe) {
-      info(msg.author.id + ' : ' + command)
+      Logger.info(msg.author.id + ' : ' + command)
       cmdExe.command(client, msg, args)
     } else
       return
