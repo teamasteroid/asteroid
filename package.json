@@ -21,6 +21,7 @@
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "immutable": "^4.0.0-rc.12",
+    "ladash": "^1.2.0",
     "mysql": "^2.17.1",
     "node-fetch": "^2.6.0",
     "passport": "^0.4.0",
