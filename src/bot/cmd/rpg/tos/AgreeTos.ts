@@ -1,7 +1,7 @@
 import CE from "../../CE";
 import { Client, Message, RichEmbed } from "discord.js";
 import DB from "../lib/DB";
-import { err } from '../../../../SLog'
+import { err } from '../../../../Logger'
 
 class AgreeTos extends CE {
   command(client: Client, msg: Message, args: string[]) {
