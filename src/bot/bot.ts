@@ -33,9 +33,6 @@ class Bot {
     })
     
     Bot.client.on('message', (msg: Message) => {
-      if(msg.channel.type == 'dm') {
-        return
-      }
       if(!msg.content.startsWith(Bot.prefix)) return
 
       const arg: string[] = []
