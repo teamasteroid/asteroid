@@ -1,10 +1,10 @@
 import express, { Application, Router, static as ss } from "express";
-import { success } from "../Logger";
 import { Portal } from './routes'
 // import { oauth } from '../config/const.json'
 // import { Strategy } from 'passport-discord'
 // import passport from 'passport'
 import session from 'express-session'
+import Logger from "../Logger";
 
 class Web {
   static app: Application
@@ -63,7 +63,7 @@ class Web {
     Web.app.use(Web.router)
 
     Web.app.listen(Web.app.get('port'), () => {
-      success(`Express server is online on port ${Web.app.get('port')}`)
+      Logger.success(`Express server is online on port ${Web.app.get('port')}`)
     })
   }
 }
