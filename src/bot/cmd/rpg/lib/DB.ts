@@ -1,7 +1,7 @@
     
 import { Connection, createConnection, queryCallback } from 'mysql'
 import * as DBSetting from '../../../../config/const.json'
-import Logger from '../../../../Logger.js';
+import Logger from '../../../../Logger';
 
 class DB {
   static conn: Connection
