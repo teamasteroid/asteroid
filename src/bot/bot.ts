@@ -1,10 +1,10 @@
 import { Client, Message, RichEmbed } from 'discord.js'
-import { err, success, info } from '../SLog';
 import { bot } from '../config/const.json'
 import Command from './command'
 import DB from './cmd/rpg/lib/DB';
 import ItemManager from './cmd/rpg/lib/ItemManager';
 import RegionManager from './cmd/rpg/lib/RegionManager';
+import Logger from '../Logger.js';
 
 class Bot {
   static client: Client
@@ -17,7 +17,7 @@ class Bot {
     RegionManager.init()
 
     Bot.client.on('ready', async () => {
-      success(`Logged in as ${Bot.client.user.tag}`)
+      Logger.success(`Logged in as ${Bot.client.user.tag}`)
 
       try {
           await Bot.client.user.setPresence({
@@ -28,7 +28,7 @@ class Bot {
             status: "online"
           });
         } catch (error) {
-          err(error);
+          Logger.err(error);
         }
     })
     
@@ -51,10 +51,10 @@ class Bot {
     Bot.client.login(bot.token)
 
     setInterval(() => {
-      info('Auto rebooting...')
+      Logger.info('Auto rebooting...')
       Bot.client.destroy().then(() => {
         Bot.client.login(bot.token)
-        success('Auto reboot success!')
+        Logger.success('Auto reboot success!')
       })
     }, 60 * 60 * 1000)
   }
