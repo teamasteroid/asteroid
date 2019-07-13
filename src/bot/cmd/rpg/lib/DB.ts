@@ -1,14 +1,14 @@
     
 import { Connection, createConnection, queryCallback } from 'mysql'
 import * as DBSetting from '../../../../config/const.json'
-import { success } from '../../../../SLog';
+import Logger from '../../../../Logger.js';
 
 class DB {
   static conn: Connection
 
   static init() {
     DB.conn = createConnection(DBSetting.db)
-    success('DB Connection Ready')
+    Logger.success('DB Connection Ready')
   }
 
   static query(query: string, values: any, callback: queryCallback) {

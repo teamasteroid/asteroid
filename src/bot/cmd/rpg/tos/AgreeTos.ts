@@ -1,7 +1,7 @@
 import CE from "../../CE";
 import { Client, Message, RichEmbed } from "discord.js";
 import DB from "../lib/DB";
-import { err } from '../../../../Logger'
+import Logger from "../../../../Logger";
 
 class AgreeTos extends CE {
   command(client: Client, msg: Message, args: string[]) {
@@ -15,7 +15,7 @@ class AgreeTos extends CE {
 
           msg.channel.send(embed)
 
-        err(error.stack || error.toString())
+        Logger.err(error.stack || error.toString())
         result = false
         return
       }
@@ -40,7 +40,7 @@ class AgreeTos extends CE {
 
             msg.channel.send(embed)
 
-          err(error.stack || error.toString())
+          Logger.err(error.stack || error.toString())
           return
         }
 
@@ -65,7 +65,7 @@ class AgreeTos extends CE {
 
           msg.channel.send(embed)
 
-        err(error.stack || error.toString())
+        Logger.err(error.stack || error.toString())
         result = false
         return
       }

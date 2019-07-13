@@ -1,5 +1,5 @@
 import express, { Application, Router, static as ss } from "express";
-import { success } from "../SLog";
+import { success } from "../Logger";
 import { Portal } from './routes'
 // import { oauth } from '../config/const.json'
 // import { Strategy } from 'passport-discord'

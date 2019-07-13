@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { info, err as es } from "../../SLog";
+import { info, err as es } from "../../Logger";
 import Bot from '../../bot/bot'
 
 class Portal {
