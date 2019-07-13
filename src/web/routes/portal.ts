@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { info, err as es } from "../../Logger";
 import Bot from '../../bot/bot'
+import Logger from "../../Logger";
 
 class Portal {
   static join(req: Request, res: Response) {
-    info(req.ip + ' : portal')
+    Logger.info(req.ip + ' : portal')
 
     const context = {
       servers: Bot.getServers(),
@@ -13,7 +13,7 @@ class Portal {
 
     req.app.render('portal', context, (err: Error, html: string) => {
       if(err) {
-        es(err.stack || err.toString())
+        Logger.err(err.stack || err.toString())
         return
       }
 
