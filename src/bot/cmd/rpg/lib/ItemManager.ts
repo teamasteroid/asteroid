@@ -2,7 +2,7 @@ import * as items from './item.json'
 import { fromJS } from 'immutable';
 import { User } from 'discord.js';
 import DB from './DB';
-import { err as error} from '../../../../SLog'
+import Logger from '../../../../Logger.js';
 
 class ItemManager {
   static itemList: any
@@ -17,7 +17,7 @@ class ItemManager {
   static getUserItem(user: User): any {
     DB.query('SELECT * FROM user WHERE id=?', [user.id], (err, results, fields) => {
       if(err) {
-        error(err.stack || err.toString())
+        Logger.err(err.stack || err.toString())
         return null
       }
 

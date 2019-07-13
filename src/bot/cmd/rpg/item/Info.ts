@@ -1,7 +1,7 @@
 import CE from "../../CE";
 import { Client, Message, RichEmbed } from "discord.js";
 import DB from "../lib/DB";
-import { err } from "../../../../SLog";
+import Logger from "../../../../Logger";
 
 class Info extends CE {
   command(client: Client, msg: Message, args: string[]) {
@@ -18,7 +18,7 @@ class Info extends CE {
 
     DB.query('SELECT * FROM user where id=?', [users.first().id], (error, results, fields) => {
       if(error) {
-        err(error.stack || error.toString())
+        Logger.err(error.stack || error.toString())
       }
 
       if(results.length < 1) {
