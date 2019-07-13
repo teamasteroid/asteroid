@@ -4,7 +4,7 @@ import Command from './command'
 import DB from './cmd/rpg/lib/DB';
 import ItemManager from './cmd/rpg/lib/ItemManager';
 import RegionManager from './cmd/rpg/lib/RegionManager';
-import Logger from '../Logger.js';
+import Logger from '../Logger';
 
 class Bot {
   static client: Client

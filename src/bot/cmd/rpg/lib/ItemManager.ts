@@ -2,7 +2,7 @@ import * as items from './item.json'
 import { fromJS } from 'immutable';
 import { User } from 'discord.js';
 import DB from './DB';
-import Logger from '../../../../Logger.js';
+import Logger from '../../../../Logger';
 
 class ItemManager {
   static itemList: any
