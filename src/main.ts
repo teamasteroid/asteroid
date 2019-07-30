@@ -1,5 +1,5 @@
 import Bot from "./bot/bot";
-import Web from "./web/web";
+// import Web from "./web/web";
 
 Bot.login()
-Web.start()
+// Web.start()

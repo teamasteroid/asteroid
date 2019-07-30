@@ -8,9 +8,5 @@
     "database": "asteroid",
     "user": "root",
     "password": "DB PASSWORD"
-  },
-  "oauth": {
-    "CLIENT_ID": "CLIENT ID",
-    "CLIENT_SECRET": "CLIENT SECRET"
   }
 }
