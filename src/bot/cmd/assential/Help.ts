@@ -10,11 +10,13 @@ class Help extends CE {
       const embed = new RichEmbed()
       .setTitle('사용법')
       .addField(`$도움 기본`, `기본 명령어들의 도움을 봅니다.`)
-      .addField(`$도움 관리`, `관리자 명령어의 도움을 봅니다.`)
       .addField(`$도움 게임`, `에스터로이드 게임 관련 명령어를 봅니다`)
       .setTimestamp(new Date())
       
-      msg.channel.send(embed)
+      if(msg.author.id === '352755226224361482')
+        embed.addField(`$도움 관리`, `관리자 명령어의 도움을 봅니다.`)
+
+      msg.channel.send(embed) 
       return
     }
 
@@ -25,17 +27,20 @@ class Help extends CE {
       case "디폴트":
         this.gen(msg, assential)
         break
-      case "admin":
-      case "어드민":
-      case "관리":
-        this.gen(msg, admin)
-        break
+      
       case "rpg":
       case "게임":
       case "asteroid":
       case "에스터로이드":
         this.gen(msg, rpg)
         break
+      case "admin":
+      case "어드민":
+      case "관리":
+          if(msg.author.id === '352755226224361482') {
+            this.gen(msg, admin)
+            break
+          }
       default:
         msg.channel.send(new RichEmbed()
           .setTitle('오류')
