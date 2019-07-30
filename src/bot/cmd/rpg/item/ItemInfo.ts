@@ -53,7 +53,7 @@ class ItemInfo extends CE {
   desc = {
     name: "iteminfo",
     description: "아이템의 정보를 봅니다.",
-    aliases: ["ii", "아이템", "searchitem", "si", "about"]
+    aliases: ["ii", "아이템", "searchitem", "about"]
   }
 }
 
