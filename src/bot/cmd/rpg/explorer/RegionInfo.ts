@@ -39,8 +39,9 @@ class RegionInfo extends CE {
           m.edit(embed)
           return
         }
-      } else 
+      } else {
         region = regions.getIn([args[0].toUpperCase()]).toJS()
+      }
   
       const embed = new RichEmbed()
         .setTitle(region.name)
