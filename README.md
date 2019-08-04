@@ -1,5 +1,5 @@
 # asteroid
-[![Author](https://img.shields.io/badge/author-5tarlight-orange.svg)](http://5tarlight.kro.kr)
+[![Author](https://img.shields.io/badge/author-5tarlight-orange.svg)](https://github.com/5tarlight)
 [![Build status](https://ci.appveyor.com/api/projects/status/i4vehpafbxc4miha?svg=true)](https://ci.appveyor.com/project/5tarlight/asteroid)
 [![License](https://img.shields.io/github/license/5tarlight/asteroid.svg)](https://github.com/5tarlight/asteroid/blob/master/LICENSE)
 ## Authors
