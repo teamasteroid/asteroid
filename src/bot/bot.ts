@@ -22,7 +22,7 @@ class Bot {
       try {
           await Bot.client.user.setPresence({
             game: {
-              name: `$help | Starlight#7528`,
+              name: `$help | http://5tarlight.kro.kr`,
               type: "PLAYING"
             },
             status: "online"
