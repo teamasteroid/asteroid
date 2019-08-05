@@ -28,12 +28,29 @@ class Explore extends CE {
 
       edit.edit('탐험을 떠나는중...')
       setTimeout(() => {
-        edit.edit('탐험하는중...')
+        edit.edit('탐험중...')
 
-        // 자원 로드, 확률 계산으로 자원 습득
+        const avail = region.available
+        let message = '탐험중...'
+        
+        //나중에 보유 아이템에 따라 시도횟수 다르게 설정할 것.
+        for(let i = 0; i < 5; i++) {
+          const random = Math.floor(Math.random() * avail.length)
+          if(Math.random() <= avail[random].probability) {
+            message += `\n:o: ${avail[random].item} 획득 성공! ㅡ 성공확률: ${avail[random].probability * 100}%`
+          } else {
+            message += `\n:x: ${avail[random].item} 획득 실패! ㅡ 실패확률: ${100 - avail[random].probability * 100}%`
+          }
+        }
+
         setTimeout(() => {
           edit.edit('탐험 완료')
-          // 결과 발표, DB적용 등
+          
+          const embed = new RichEmbed()
+            .setTitle(`탐험 완료! (${region.name})`)
+            .setDescription(message)
+          
+          edit.edit(embed)
         }, 5000)
       }, 1000)
     })
