@@ -13,20 +13,18 @@ class RegionManager {
 
   static getRegion(region: string) {
     const regions = RegionManager.getItemList()
-
+    let result = null
     if(!regions.getIn([region.toUpperCase()])) {
       Object.keys(regions.toJS()).map(k => regions.toJS()[k]).forEach((r: any) => {
         if(r.name == region.toUpperCase().trim()) {
-          return r
+          result = r
         }
       })
-
-      if(!region) {
-        return null
-      }
     } else {
-      return regions.getIn([region.toUpperCase()]).toJS()
+      result = regions.getIn([region.toUpperCase()]).toJS()
     }
+
+    return result
   }
 }
 
