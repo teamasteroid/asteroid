@@ -25,6 +25,17 @@ class Explore extends CE {
         edit.edit(embed)
         return
       }
+
+      edit.edit('탐험을 떠나는중...')
+      setTimeout(() => {
+        edit.edit('탐험하는중...')
+
+        // 자원 로드, 확률 계산으로 자원 습득
+        setTimeout(() => {
+          edit.edit('탐험 완료')
+          // 결과 발표, DB적용 등
+        }, 5000)
+      }, 1000)
     })
   }
 
