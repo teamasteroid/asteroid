@@ -14,8 +14,9 @@ class ItemManager {
     return ItemManager.itemList
   }
 
-  static getUserItem(user: User): any {
-    DB.query('SELECT * FROM user WHERE id=?', [user.id], (err, results, fields) => {
+  static async getUserItem(user: User): Promise<any> {
+    let result = null
+    await DB.query('SELECT * FROM user WHERE id=?', [user.id], (err, results, fields) => {
       if(err) {
         Logger.err(err.stack || err.toString())
         return null
@@ -23,12 +24,15 @@ class ItemManager {
 
       if(results.length < 1) {
         // Not Found
-        return null
+        result = null
+        console.dir('nope')
       } else {
         // Found
-        return JSON.parse(results[0]['item'])
+        result = JSON.parse(results[0]['item'])
       }
     })
+
+    return result
   }
 }
 
