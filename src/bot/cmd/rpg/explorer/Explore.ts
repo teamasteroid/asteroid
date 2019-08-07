@@ -46,7 +46,7 @@ class Explore extends CE {
         }
 
         const inv = results[0]['item']
-        console.dir(inv)
+        const gotItem = {}
   
         edit.edit('탐험을 떠나는중...')
         setTimeout(() => {
@@ -62,6 +62,13 @@ class Explore extends CE {
                             || ItemManager.getItemList().toJS()['RESOURCE'][avail[random].item]
             if(Math.random() <= avail[random].probability) {
               message += `\n+ ${propose.name || propose} 획득 성공! ㅡ 성공확률: ${avail[random].probability * 100}%`
+              if(!gotItem[avail[random].item]) {
+                gotItem[avail[random].item] = { key: avail[random].item, quantity: 1}
+              } else {
+                gotItem[avail[random].item] = { key: avail[random].item, quantity: gotItem[avail[random].item].quantity + 1}
+              }
+
+              console.dir(gotItem)
             } else {
               message += `\n- ${propose.name || propose} 획득 실패! ㅡ 실패확률: ${100 - avail[random].probability * 100}%`
             }
