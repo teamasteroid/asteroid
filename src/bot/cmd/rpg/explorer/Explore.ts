@@ -45,7 +45,8 @@ class Explore extends CE {
           return
         }
 
-        const inv = results[0]['item']
+        const inv = JSON.parse(results[0]['item'])
+        // const inv = {IRON_ORE: { key: 'IRON_ORE', quantity: 2 }}
         const gotItem = {}
   
         edit.edit('탐험을 떠나는중...')
@@ -67,13 +68,18 @@ class Explore extends CE {
               } else {
                 gotItem[avail[random].item] = { key: avail[random].item, quantity: gotItem[avail[random].item].quantity + 1}
               }
-
-              console.dir(gotItem)
             } else {
               message += `\n- ${propose.name || propose} 획득 실패! ㅡ 실패확률: ${100 - avail[random].probability * 100}%`
             }
           }
-  
+          Object.keys(inv).forEach(k => {
+            if(inv[k] && gotItem[k]) {
+              gotItem[k].quantity += inv[k].quantity
+            } else {
+              gotItem[k] = inv[k]
+            }
+          })
+
           setTimeout(() => {
             edit.edit('탐험 완료')
             
