@@ -1,5 +1,5 @@
 import CE from "../../CE";
-import { Client, Message, RichEmbed } from "discord.js";
+import { Client, Message, RichEmbed, User } from "discord.js";
 import DB from "../lib/DB";
 import Logger from "../../../../Logger";
 
@@ -8,11 +8,27 @@ class Info extends CE {
     const users = msg.mentions.users
 
     if(!(users.array().length > 0)) {
-      const embed = new RichEmbed()
-        .setTitle('실패')
-        .addField('해당 유저를 찾을 수 없습니다.', '@mention 을 통해 유저를 지정해 주십시오.')
-      
-      msg.channel.send(embed)
+      DB.query('SELECT * FROM user where id=?', [msg.author.id], (error, results, fields) => {
+        if(error) {
+          Logger.err(error.stack || error.toString())
+        }
+  
+        if(results.length < 1) {
+          const embed = new RichEmbed()
+            .setTitle('실패')
+            .addField('해당 유저의 정보가 없습니다', '`$tos`를 통해 약관에 동의 해 주십시오.')
+        
+          msg.channel.send(embed)
+          return
+        }
+  
+        const embed = new RichEmbed()
+          .setTitle('STAT OF `' + msg.author.username + '`')
+          .addField('소지품', results[0]['item'])
+          .addField('돈', results[0]['money'])
+  
+        msg.channel.send(embed)
+      })
       return
     }
 
