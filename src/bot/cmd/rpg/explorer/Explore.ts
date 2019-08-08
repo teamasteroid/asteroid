@@ -80,6 +80,13 @@ class Explore extends CE {
             }
           })
 
+          DB.query('UPDATE user SET item=? WHERE id=?', [JSON.stringify(gotItem), msg.author.id], (err, results, fields) => {
+            if(err) {
+              Logger.err(err.stack || err.toString())
+              return
+            }
+          })
+
           setTimeout(() => {
             edit.edit('탐험 완료')
             
