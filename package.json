@@ -1,0 +1,12 @@
+{
+  "name": "asteroid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/5tarlight/asteroid",
+  "author": "KKS",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node ."
+  }
+}
