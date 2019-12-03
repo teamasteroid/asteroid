@@ -8,5 +8,9 @@
   "private": true,
   "scripts": {
     "start": "node ."
+  },
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "korean-logger": "^1.0.6"
   }
 }
