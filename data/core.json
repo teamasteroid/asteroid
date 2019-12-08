@@ -1,6 +1,12 @@
 {
+  "admin": ["650711031626072097"],
   "bot": {
     "token": "NTc2NzYzNDk4NTU4NjUyNDI1.XeYu0Q.EjJCU-nvxmLufhkeZEGkZIIkIrw",
-    "prefix": "*"
+    "prefix": "*",
+    "shard": {
+      "respawn": true,
+      "count": "auto",
+      "delay": 7500
+    }
   }
 }
