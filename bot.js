@@ -1,5 +1,6 @@
 const { Client } = require('discord.js')
 const Logger = require('korean-logger')
+const Core = require('./data/core.json')
 
 class Asteroid extends Client {
   constructor(config) {
@@ -15,4 +16,4 @@ class Asteroid extends Client {
   }
 }
 
-module.exports = Asteroid
+module.exports = new Asteroid(Core)
