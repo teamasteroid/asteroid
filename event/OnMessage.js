@@ -14,8 +14,8 @@ class OnMessage extends EventHandler {
     const args = msg.content.slice(Core.bot.prefix.length).trim().split(/ |\n+/g)
     const cmd = args.shift().toLowerCase()
 
-    Logger.log(cmd)
-    Logger.log(args)
+    Logger.log(`${msg.author.id} : ${cmd}`)
+    
   }
 }
 
