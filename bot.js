@@ -1,6 +1,7 @@
 const { Client } = require('discord.js')
 const Logger = require('korean-logger')
 const Core = require('./data/core.json')
+const OnMessage = require('./event/OnMessage')
 
 class Asteroid extends Client {
   constructor(config) {
@@ -12,7 +13,15 @@ class Asteroid extends Client {
       Logger.success('플레이 메세지 세팅됨.')
     })
 
+    this.registerEvent(new OnMessage())
+
     this.login(this.config.bot.token).then(() => Logger.success(`${this.user.tag} 로그인됨`))
+  }
+
+  registerEvent(eventHandler) {
+    const { eventName, bind } = eventHandler
+    this.on(eventName, e => bind(this, e))
+    Logger.success(`${eventName} 이벤트 등록됨.`)
   }
 }
 
