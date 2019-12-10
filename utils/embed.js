@@ -3,7 +3,7 @@ const { RichEmbed } = require('discord.js')
 class Embed extends RichEmbed {
   constructor() {
     super()
-    this.color = '#8ff'
+    this.color = 8978431
   }
 }
 
