@@ -1,13 +1,17 @@
 class CommandInfo {
-  defaultValue = {
-    name: 'NoName',
-    aliases: ['NoAliases'],
-    description: 'No description given',
-    isAdminOnly: false
-  }
-
   constructor(doc) {
+    this.defaultValue = {
+      name: 'NoName',
+      aliases: ['NoAliases'],
+      description: 'No description given',
+      isAdminOnly: false
+    }
+
     const { name, aliases, description, isAdminOnly } = doc
+    this.name = name || this.defaultValue.name
+    this.aliases = aliases || this.defaultValue.aliases
+    this.description = description || this.defaultValue.description
+    this.isAdminOnly = isAdminOnly || this.defaultValue.isAdminOnly
   }
 }
 
