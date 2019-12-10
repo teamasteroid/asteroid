@@ -1,6 +1,6 @@
 const Command = require('../Command')
-const commandInfo = require('../CommandInfo')
-
+const CommandExecutor = require('../CommandExecutor')
+const Embed = require('../../utils/embed')
 class Help extends Command {
   constructor() {
     const info = {
@@ -14,7 +14,27 @@ class Help extends Command {
   }
 
   run(client, msg, args, cmd) {
-    msg.reply('Wa! Sans!')
+    const commands = CommandExecutor.getCommands()
+    let embed = new Embed()
+      .setTitle('도움말')
+    let i = 0
+
+    commands.forEach(ce => {
+      const info = ce.cmd.commandInfo
+
+      if(info > 15) {
+        msg.channel.send(embed)
+
+        embed = new Embed()
+        .setTitle('도움말 (계속)')
+        i = 0
+      }
+
+      embed.addField(info.name, info.description, true)
+      i++
+    })
+
+    msg.channel.send(embed)
   }
 }
 
