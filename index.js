@@ -11,7 +11,9 @@ const shardManager = new ShardingManager('./bot.js', {
 shardManager.spawn(
   Core.bot.shard.count === 'auto' ? shardManager.totalShards : config.bot.shard.count,
   Core.bot.shard.delay
-)
+).catch(err => {
+  Logger.error(err.stack)
+})
 
 shardManager.on('launch', shard => {
   Logger.success(`#${shard.id} 샤드 시작됨.`)
