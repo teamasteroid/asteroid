@@ -18,8 +18,8 @@ class OnMessage extends EventHandler {
     CommandExecutor.commands.forEach(ce => {
       if(ce.cmd.commandInfo.name === cmd || ce.cmd.commandInfo.aliases.includes(cmd)) {
         ce.cmd.run(client, msg, args, cmd)
+        Logger.log(`${msg.author.id} : ${cmd}`)
       }
-      Logger.log(`${msg.author.id} : ${cmd}`)
     })
   }
 }
