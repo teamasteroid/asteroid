@@ -22,7 +22,7 @@ class Help extends Command {
     commands.forEach(ce => {
       const info = ce.cmd.commandInfo
 
-      if(info > 15) {
+      if(i > 15) {
         msg.channel.send(embed)
 
         embed = new Embed()
