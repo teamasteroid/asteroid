@@ -2,7 +2,7 @@ class CommandInfo {
   constructor(doc) {
     this.defaultValue = {
       name: 'NoName',
-      aliases: ['NoAliases'],
+      aliases: [''],
       description: 'No description given',
       isAdminOnly: false
     }
