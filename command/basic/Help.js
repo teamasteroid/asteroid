@@ -1,6 +1,8 @@
 const Command = require('../Command')
 const CommandExecutor = require('../CommandExecutor')
 const Embed = require('../../utils/embed')
+const isOwner = require('../../utils/Owner')
+
 class Help extends Command {
   constructor() {
     const info = {
@@ -15,6 +17,8 @@ class Help extends Command {
 
   run(client, msg, args, cmd) {
     const commands = CommandExecutor.getCommands()
+    const owner = isOwner(msg.author.id)
+
     let embed = new Embed()
       .setTitle('도움말')
     let i = 0
@@ -29,6 +33,8 @@ class Help extends Command {
         .setTitle('도움말 (계속)')
         i = 0
       }
+      
+      if(!owner && info.isAdminOnly) return
 
       embed.addField(info.name, info.description, true)
       i++
