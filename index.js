@@ -9,7 +9,7 @@ const shardManager = new ShardingManager('./bot.js', {
 })
 
 shardManager.spawn(
-  Core.bot.shard.count === 'auto' ? shardManager.totalShards : config.bot.shard.count,
+  Core.bot.shard.count === 'auto' ? shardManager.totalShards : Core.bot.shard.count,
   Core.bot.shard.delay
 ).catch(err => {
   Logger.error(err.stack)
