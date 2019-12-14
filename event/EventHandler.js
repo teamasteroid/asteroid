@@ -1,11 +1,11 @@
 const Logger = require('discord.js')
 
 class EventHandler {
-  constructor(eventName) {
+  constructor (eventName) {
     this.eventName = eventName
   }
-  
-  bind(client, e) {
+
+  bind (client, e) {
     Logger.warn('No Handler given')
   }
 }

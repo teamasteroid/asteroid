@@ -6,7 +6,7 @@ const CommandExecutor = require('./command/CommandExecutor')
 const { Help, ServerList } = require('./command')
 
 class Asteroid extends Client {
-  constructor(config) {
+  constructor (config) {
     super()
     this.config = config
 
@@ -23,7 +23,7 @@ class Asteroid extends Client {
     this.login(this.config.bot.token).then(() => Logger.success(`${this.user.tag} 로그인됨`))
   }
 
-  registerEvent(eventHandler) {
+  registerEvent (eventHandler) {
     const { eventName, bind } = eventHandler
     this.on(eventName, e => bind(this, e))
     Logger.success(`${eventName} 이벤트 등록됨.`)

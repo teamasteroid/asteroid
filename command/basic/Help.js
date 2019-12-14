@@ -4,7 +4,7 @@ const Embed = require('../../utils/embed')
 const isOwner = require('../../utils/Owner')
 
 class Help extends Command {
-  constructor() {
+  constructor () {
     const info = {
       name: 'help',
       aliases: ['도움', '도움말'],
@@ -15,7 +15,7 @@ class Help extends Command {
     super(info)
   }
 
-  run(client, msg, args, cmd) {
+  run (client, msg, args, cmd) {
     const commands = CommandExecutor.getCommands()
     const owner = isOwner(msg.author.id)
 
@@ -26,15 +26,15 @@ class Help extends Command {
     commands.forEach(ce => {
       const info = ce.cmd.commandInfo
 
-      if(i > 15) {
+      if (i > 15) {
         msg.channel.send(embed)
 
         embed = new Embed()
-        .setTitle('도움말 (계속)')
+          .setTitle('도움말 (계속)')
         i = 0
       }
-      
-      if(!owner && info.isAdminOnly) return
+
+      if (!owner && info.isAdminOnly) return
 
       embed.addField(info.name, info.description, true)
       i++

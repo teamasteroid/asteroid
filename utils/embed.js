@@ -1,7 +1,7 @@
 const { RichEmbed } = require('discord.js')
 
 class Embed extends RichEmbed {
-  constructor() {
+  constructor () {
     super()
     this.color = 8978431
   }

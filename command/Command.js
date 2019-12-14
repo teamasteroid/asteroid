@@ -1,11 +1,11 @@
 const Logger = require('korean-logger')
 
 class Command {
-  constructor(cmdInfo) {
+  constructor (cmdInfo) {
     this.commandInfo = cmdInfo
   }
 
-  run(client, msg, args, cmd) {
+  run (client, msg, args, cmd) {
     Logger.warn('No executable actions given')
   }
 }

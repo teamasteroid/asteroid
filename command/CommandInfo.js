@@ -1,5 +1,5 @@
 class CommandInfo {
-  constructor(doc) {
+  constructor (doc) {
     this.defaultValue = {
       name: 'NoName',
       aliases: [''],

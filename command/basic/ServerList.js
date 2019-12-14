@@ -1,7 +1,7 @@
 const Command = require('../Command')
 
 class ServerList extends Command {
-  constructor() {
+  constructor () {
     const info = {
       name: 'serverlist',
       aliases: ['서버리스트', 'servers'],
@@ -12,7 +12,7 @@ class ServerList extends Command {
     super(info)
   }
 
-  run(client, msg, args, cmd) {
+  run (client, msg, args, cmd) {
     let servers = ''
 
     client.guilds.array().forEach(g => {
