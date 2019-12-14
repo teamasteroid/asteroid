@@ -8,5 +8,12 @@
       "count": "auto",
       "delay": 7500
     }
+  },
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "asteroid",
+    "user": "root",
+    "password": "shy49417"
   }
 }
