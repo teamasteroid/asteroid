@@ -1,0 +1,8 @@
+{
+  "command": {
+    "help": {
+      "title": "help",
+      "continueTitle": "help(continued)"
+    }
+  }
+}

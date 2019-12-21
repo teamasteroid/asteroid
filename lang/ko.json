@@ -1,0 +1,8 @@
+{
+  "command": {
+    "help": {
+      "title": "도움말",
+      "continueTitle": "도움말(계속)"
+    }
+  }
+}
