@@ -4,7 +4,7 @@ const Logger = require('korean-logger')
 
 class Database {
   constructor (msg) {
-    this.msg = msg
+    this.dm = msg
     this.connection = createConnection(Core.db)
   }
 
@@ -14,7 +14,10 @@ class Database {
         if (err) { return reject(err) }
         resolve(rows)
       })
-    }).catch(this.onErr)
+    }).catch(err => {
+      Logger.error(err.stack)
+      this.dm.channel.send('데이터베이스 에러 <@352755226224361482>으로 문의해 주십시오.')
+    })
   }
 
   close () {
@@ -23,12 +26,10 @@ class Database {
         if (err) { return reject(err) }
         resolve()
       })
-    }).catch(this.onErr)
-  }
-
-  onErr(err) {
-    Logger.error(err.stack)
-    this.msg.channel.send('데이터베이스 에러 <@352755226224361482>으로 문의해 주십시오.')
+    }).catch(err => {
+      Logger.error(err.stack)
+      this.dm.channel.send('데이터베이스 에러 <@352755226224361482>으로 문의해 주십시오.')
+    })
   }
 }
 
