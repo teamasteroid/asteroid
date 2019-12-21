@@ -2,6 +2,7 @@ const Core = require('../data/core.json')
 const Logger = require('korean-logger')
 const EventHandler = require('./EventHandler')
 const CommandExecutor = require('../command/CommandExecutor')
+const CheckData = require('../utils/CheckData')
 
 class OnMessage extends EventHandler {
   constructor () {
@@ -11,6 +12,8 @@ class OnMessage extends EventHandler {
   bind (client, msg) {
     if (msg.author.bot) return
     if (!msg.content.startsWith(Core.bot.prefix)) return
+
+    if(!CheckData.hasData(msg)) msg.channel.send('유저정보가 없습니다.')
 
     const args = msg.content.slice(Core.bot.prefix.length).trim().split(/ |\n+/g)
     const cmd = args.shift().toLowerCase()
