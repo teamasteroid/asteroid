@@ -18,7 +18,10 @@ USE `asteroid`;
 
 -- 테이블 asteroid.user 구조 내보내기
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` bigint(20) unsigned NOT NULL
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `discord` tinytext NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
