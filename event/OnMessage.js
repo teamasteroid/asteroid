@@ -13,7 +13,12 @@ class OnMessage extends EventHandler {
     if (msg.author.bot) return
     if (!msg.content.startsWith(Core.bot.prefix)) return
 
-    if(!CheckData.hasData(msg)) msg.channel.send('유저정보가 없습니다.')
+    CheckData.hasData(msg).then(result => {
+      if(!result) {
+        CheckData.insertDefault(msg)
+        msg.channel.send('유저정보 추가됨.')
+      }
+    })
 
     const args = msg.content.slice(Core.bot.prefix.length).trim().split(/ |\n+/g)
     const cmd = args.shift().toLowerCase()

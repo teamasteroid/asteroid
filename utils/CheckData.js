@@ -1,18 +1,27 @@
 const Database = require('./Database')
 
 class CheckData {
-  static hasData(msg) {
+  static async hasData(msg) {
     const db = new Database(msg)
     let result = false
 
-    db.query('SELECT * FROM user WHERE id=?', [msg.author.id])
+    await db.query('SELECT * FROM user WHERE discord=?', [msg.author.id])
     .then(rows => {
+      console.log(rows.length)
       if(rows.length > 0) result = true
     })
 
-    db.close()
+    await db.close()
 
+    console.log(result)
     return result
+  }
+
+  static insertDefault(msg) {
+    const db = new Database(msg)
+    
+    db.query('INSERT INTO user (discord) VALUES (?)', [msg.author.id])
+    db.close()
   }
 }
 
