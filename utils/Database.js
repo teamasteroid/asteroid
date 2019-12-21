@@ -1,8 +1,10 @@
 const { createConnection } = require('mysql')
 const Core = require('../data/core.json')
+const Logger = require('korean-logger')
 
 class Database {
-  constructor () {
+  constructor (msg) {
+    this.msg = msg
     this.connection = createConnection(Core.db)
   }
 
@@ -12,7 +14,7 @@ class Database {
         if (err) { return reject(err) }
         resolve(rows)
       })
-    })
+    }).catch(this.onErr)
   }
 
   close () {
@@ -21,7 +23,12 @@ class Database {
         if (err) { return reject(err) }
         resolve()
       })
-    })
+    }).catch(this.onErr)
+  }
+
+  onErr(err) {
+    Logger.error(err.stack)
+    this.msg.channel.send('데이터베이스 에러 <@352755226224361482>으로 문의해 주십시오.')
   }
 }
 
