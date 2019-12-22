@@ -3,7 +3,7 @@ const Logger = require('korean-logger')
 const Core = require('./data/core.json')
 const OnMessage = require('./event/OnMessage')
 const CommandExecutor = require('./command/CommandExecutor')
-const { Help, ServerList } = require('./command')
+const { Help, ServerList, Lang } = require('./command')
 
 class Asteroid extends Client {
   constructor (config) {
@@ -19,6 +19,7 @@ class Asteroid extends Client {
 
     CommandExecutor.register(new Help(), 'basic')
     CommandExecutor.register(new ServerList(), 'basic')
+    CommandExecutor.register(new Lang(), 'basic')
 
     this.login(this.config.bot.token).then(() => Logger.success(`${this.user.tag} 로그인됨`))
   }
