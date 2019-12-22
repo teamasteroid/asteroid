@@ -7,13 +7,10 @@ class CheckData {
 
     await db.query('SELECT * FROM user WHERE discord=?', [msg.author.id])
     .then(rows => {
-      console.log(rows.length)
       if(rows.length > 0) result = true
     })
 
     await db.close()
-
-    console.log(result)
     return result
   }
 
