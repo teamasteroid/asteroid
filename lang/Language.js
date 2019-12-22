@@ -30,6 +30,10 @@ class Lang {
   static setLang(msg, lang) {
     const db = new Database(msg)
   }
+
+  static checkLang(lang) {
+    return Object.keys(langs).includes(lang.trim().toLowerCase())
+  }
 }
 
 module.exports.langs = langs
