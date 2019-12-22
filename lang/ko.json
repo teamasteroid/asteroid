@@ -3,6 +3,9 @@
     "help": {
       "title": "도움말",
       "continueTitle": "도움말(계속)"
+    },
+    "dataChecker": {
+      "createNewData": "데이터가 추가되었습니다."
     }
   }
 }

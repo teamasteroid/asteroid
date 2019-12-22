@@ -3,6 +3,9 @@
     "help": {
       "title": "help",
       "continueTitle": "help(continued)"
+    },
+    "dataChecker": {
+      "createNewData": "Data added"
     }
   }
 }
