@@ -16,9 +16,15 @@ class Lang extends Command {
   run (client, msg, args, cmd) {
     if(args.length < 1) {
       LangMng.getLang(msg).then(lang => {
-        console.log(lang)
         msg.reply(lang)
       })
+    } else {
+      if(!LangMng.checkLang(args[0])) {
+        msg.channel.send('유효하지 않은 언어')
+        return
+      } else {
+        LangMng.setLang(args[0])
+      }
     }
   }
 }
