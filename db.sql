@@ -16,13 +16,21 @@
 CREATE DATABASE IF NOT EXISTS `asteroid` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `asteroid`;
 
+-- 테이블 asteroid.lang 구조 내보내기
+CREATE TABLE IF NOT EXISTS `lang` (
+  `id` bigint(20) DEFAULT NULL,
+  `lang` tinytext DEFAULT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 내보낼 데이터가 선택되어 있지 않습니다.
 -- 테이블 asteroid.user 구조 내보내기
 CREATE TABLE IF NOT EXISTS `user` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `discord` tinytext NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
