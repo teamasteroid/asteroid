@@ -23,7 +23,9 @@ class Lang extends Command {
         msg.channel.send('유효하지 않은 언어')
         return
       } else {
-        LangMng.setLang(args[0])
+        LangMng.setLang(msg, args[0]).then(rows => {
+          msg.channel.send('언어가 변경되었습니다.')
+        })
       }
     }
   }
