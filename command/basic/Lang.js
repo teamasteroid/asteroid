@@ -1,5 +1,6 @@
 const Command = require('../Command')
 const LangMng = require('../../lang/Language')
+const Embed = require('../../utils/embed')
 
 class Lang extends Command {
   constructor () {
@@ -16,15 +17,15 @@ class Lang extends Command {
   run (client, msg, args, cmd) {
     if(args.length < 1) {
       LangMng.getLang(msg).then(lang => {
-        msg.reply(lang)
+        msg.channel.send(new Embed().setTitle(lang))
       })
     } else {
       if(!LangMng.checkLang(args[0])) {
-        msg.channel.send('유효하지 않은 언어')
+        msg.channel.send(new Embed('error').setTitle('유효하지 않은 언어입니다.'))
         return
       } else {
         LangMng.setLang(msg, args[0]).then(rows => {
-          msg.channel.send('언어가 변경되었습니다.')
+          msg.channel.send(new Embed().setTitle('언어가 변경되었습니다.'))
         })
       }
     }
