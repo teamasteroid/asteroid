@@ -3,6 +3,7 @@ const Logger = require('korean-logger')
 const EventHandler = require('./EventHandler')
 const CommandExecutor = require('../command/CommandExecutor')
 const CheckData = require('../utils/CheckData')
+const Lang = require('../lang/Language')
 
 class OnMessage extends EventHandler {
   constructor () {
@@ -25,7 +26,7 @@ class OnMessage extends EventHandler {
 
     CommandExecutor.commands.forEach(ce => {
       if (ce.cmd.commandInfo.name === cmd || ce.cmd.commandInfo.aliases.includes(cmd)) {
-        ce.cmd.run(client, msg, args, cmd)
+        ce.cmd.run(client, msg, args, cmd, Lang.langs[Lang.getLang(msg)])
         Logger.log(`${msg.author.id} : ${cmd}`)
       }
     })

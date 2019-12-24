@@ -5,7 +5,7 @@ class Command {
     this.commandInfo = cmdInfo
   }
 
-  run (client, msg, args, cmd) {
+  run (client, msg, args, cmd, lang) {
     Logger.warn('No executable actions given')
   }
 }
