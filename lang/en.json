@@ -6,6 +6,10 @@
     },
     "dataChecker": {
       "createNewData": "Data added"
+    },
+    "lang": {
+      "invalid": "invalid language",
+      "changed": "Your language has been changed."
     }
   }
 }

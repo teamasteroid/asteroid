@@ -14,18 +14,22 @@ class Lang extends Command {
     super(info)
   }
 
-  run (client, msg, args, cmd) {
+  run (client, msg, args, cmd, lang) {
     if(args.length < 1) {
       LangMng.getLang(msg).then(lang => {
         msg.channel.send(new Embed().setTitle(lang))
       })
     } else {
       if(!LangMng.checkLang(args[0])) {
-        msg.channel.send(new Embed('error').setTitle('유효하지 않은 언어입니다.'))
+        msg.channel.send(new Embed('error').setTitle(lang.command.lang.invalid))
         return
       } else {
         LangMng.setLang(msg, args[0]).then(rows => {
-          msg.channel.send(new Embed().setTitle('언어가 변경되었습니다.'))
+          LangMng.getLang(msg).then(lang => {
+            const embed = new Embed()
+              .setTitle(LangMng.getLangs()[lang].command.lang.changed)
+            msg.channel.send(embed)
+          })
         })
       }
     }

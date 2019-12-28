@@ -6,6 +6,10 @@
     },
     "dataChecker": {
       "createNewData": "데이터가 추가되었습니다."
+    },
+    "lang": {
+      "invalid": "유효하지 않은 언어입니다.",
+      "changed": "언어가 변경되었습니다."
     }
   }
 }
