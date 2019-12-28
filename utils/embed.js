@@ -13,6 +13,10 @@ class Embed extends RichEmbed {
       case 'warn':
         this.color = 16756838
         return
+      case 'random':
+        const rand = Math.floor(Math.random() * 0xffffff)
+        this.color = rand
+        return
       default:
         this.color = 8978431
         return
