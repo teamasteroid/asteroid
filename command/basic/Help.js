@@ -15,12 +15,12 @@ class Help extends Command {
     super(info)
   }
 
-  run (client, msg, args, cmd) {
+  run (client, msg, args, cmd, lang) {
     const commands = CommandExecutor.getCommands()
     const owner = isOwner(msg.author.id)
 
     let embed = new Embed()
-      .setTitle('도움말')
+      .setTitle(lang.command.help.title)
     let i = 0
 
     commands.forEach(ce => {
@@ -30,7 +30,7 @@ class Help extends Command {
         msg.channel.send(embed)
 
         embed = new Embed()
-          .setTitle('도움말 (계속)')
+          .setTitle(lang.command.help.continueTitle)
         i = 0
       }
 

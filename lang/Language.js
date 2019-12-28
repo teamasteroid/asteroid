@@ -1,11 +1,13 @@
 const Database = require('../utils/Database')
 
-const langs = {
-  ko: require('./ko.json'),
-  en: require('./en.json')
-}
-
 class Lang {
+  static getLangs() {
+    return {
+      ko: require('./ko.json'),
+      en: require('./en.json')
+    }
+  }
+
   static async getLang(msg) {
     const db = await new Database(msg)
 
@@ -56,9 +58,8 @@ class Lang {
   }
 
   static checkLang(lang) {
-    return Object.keys(langs).includes(lang.trim().toLowerCase())
+    return Object.keys(Lang.getLangs()).includes(lang.trim().toLowerCase())
   }
 }
 
-module.exports.langs = langs
 module.exports = Lang

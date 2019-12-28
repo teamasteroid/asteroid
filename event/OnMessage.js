@@ -17,7 +17,10 @@ class OnMessage extends EventHandler {
     CheckData.hasData(msg).then(result => {
       if(!result) {
         CheckData.insertDefault(msg)
-        msg.channel.send('유저정보 추가됨.')
+
+        Lang.getLang(msg).then(lang => {
+          msg.channel.send(Lang.langs[lang].dataChecker.createNewData)
+        })    
       }
     })
 
@@ -26,8 +29,10 @@ class OnMessage extends EventHandler {
 
     CommandExecutor.commands.forEach(ce => {
       if (ce.cmd.commandInfo.name === cmd || ce.cmd.commandInfo.aliases.includes(cmd)) {
-        ce.cmd.run(client, msg, args, cmd, Lang.langs[Lang.getLang(msg)])
-        Logger.log(`${msg.author.id} : ${cmd}`)
+        Lang.getLang(msg).then(lang => {
+          ce.cmd.run(client, msg, args, cmd, Lang.getLangs()[lang])
+          Logger.log(`${msg.author.id} : ${cmd}`)
+        })
       }
     })
   }
