@@ -1,0 +1,10 @@
+{
+  "name": "asteroid",
+  "version": "1.0.0",
+  "description": "newwww discord bot",
+  "main": "src/bot.ts",
+  "repository": "git@github.com:5tarlight/asteroid.git",
+  "author": "KKS",
+  "license": "AGPL-3.0",
+  "private": false
+}
