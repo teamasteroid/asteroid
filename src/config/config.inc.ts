@@ -1,4 +1,25 @@
 /*
+export interface Config {
+  admin: string[],
+  bot: {
+    token: string,
+    prefix: string,
+    shard: {
+      respawn: boolean,
+      count: string | number
+      delay: number
+    }
+  },
+  db: {
+    host: string,
+    port: number,
+    database: string,
+    user: string,
+    password: string
+  }
+}
+
+
 const config: Config = {
   admin: [""],
   bot: {
@@ -18,4 +39,6 @@ const config: Config = {
     password: "PASSWORD"
   }
 }
+
+export default config
 */
