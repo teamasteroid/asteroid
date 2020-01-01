@@ -6,5 +6,10 @@
   "repository": "git@github.com:5tarlight/asteroid.git",
   "author": "KKS",
   "license": "AGPL-3.0",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@types/mysql": "^2.15.8",
+    "discord.js": "^11.5.1",
+    "mysql": "^2.17.1"
+  }
 }
