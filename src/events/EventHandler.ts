@@ -4,7 +4,7 @@ class EventHandler {
   _name: string
 
   constructor(eventName: string) {
-    this._name = name
+    this._name = eventName
   }
 
   bind(client: Client, e: any) {

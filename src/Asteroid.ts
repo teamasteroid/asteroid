@@ -1,5 +1,7 @@
 import { Client } from 'discord.js'
 import { Config } from './config/config'
+import EventManager from './events/EventManager'
+import OnMessage from './events/msg/OnMessage'
 
 class Asteroid extends Client {
   _config: Config
@@ -9,7 +11,13 @@ class Asteroid extends Client {
 
     this._config = config
 
-    super.login(this._config.bot.token)
+    this.on('ready', () => console.log('bot ready'))
+    
+    super.login(this._config.bot.token).then(this.bindEvents)
+  }
+  
+  bindEvents() {
+    EventManager.bind('message', new OnMessage())
   }
 }
 

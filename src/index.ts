@@ -1,10 +1,8 @@
-import Client from './Asteroid'
+import Asteroid from './Asteroid'
 import config from './config/config'
+import EventManager from './events/EventManager'
 
-const Asteroid = new Client(config)
+EventManager.init()
+const bot = new Asteroid(config)
 
-Asteroid.on('ready', () => {
-  console.log('bot ready')
-})
-
-Asteroid.login()
+export default bot
