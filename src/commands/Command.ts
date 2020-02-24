@@ -9,7 +9,7 @@ class Command {
       name: 'NoName',
       description: 'NoDesc',
       alias: [],
-      isAdminOnly: false,
+      isAdminOnly: true,
       parameter: 0,
       category: 'NoCategory'
     }
@@ -18,7 +18,7 @@ class Command {
       this.meta.name = _meta.name || 'NoName'
       this.meta.description = _meta.description || 'NoDesc'
       this.meta.alias = _meta.alias || []
-      this.meta.isAdminOnly = _meta.isAdminOnly || false
+      this.meta.isAdminOnly = _meta.isAdminOnly || true
       this.meta.parameter = _meta.parameter || 0
       this.meta.category = _meta.category || 'NoCategory'
     }
