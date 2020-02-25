@@ -1,5 +1,7 @@
-import { Collection } from 'discord.js'
+import { Collection, Message } from 'discord.js'
 import Command from './Command'
+import config from '../config/config'
+import Asteroid from '../index'
 
 import Invite from './basic/Invite'
 
@@ -29,6 +31,25 @@ class CommandManager {
       CommandManager.aliases.set(a, command)
       console.log(`${a} command set`)
     })
+  }
+
+  static executeCommand(msg: Message) {
+    if(msg.author.bot) return
+    if (!msg.content.startsWith(config.bot.prefix)) return
+
+    const content = msg.content
+    const args = content.slice(config.bot.prefix.length).trim().split(/ |\n+/g)
+    const cmd = (args.shift() || '').toLowerCase()
+    const ce = CommandManager.commands.get(cmd)
+    const al = CommandManager.aliases.get(cmd)
+
+    if(!ce) {
+      if(al) {
+        al.execute(Asteroid, msg, args, cmd)
+      }
+    } else {
+      ce.execute(Asteroid, msg, args, cmd)
+    }
   }
 }
 

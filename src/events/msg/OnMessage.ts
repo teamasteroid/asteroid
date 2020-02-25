@@ -1,5 +1,6 @@
 import EventHandler from '../EventHandler'
 import { Client, Message } from 'discord.js'
+import CommandManager from '../../commands/CommandManager'
 
 class OnMessage extends EventHandler {
   constructor() {
@@ -7,7 +8,7 @@ class OnMessage extends EventHandler {
   }
 
   bind (client: Client, e: Message) {
-    console.log(e.content)
+    CommandManager.executeCommand(e)
   }
 }
 
