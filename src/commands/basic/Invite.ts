@@ -1,6 +1,7 @@
 import { Client, Message } from 'discord.js'
 import Command from '../Command'
 import CommandMeta from '../CommandMeta'
+import Embed from '../Embed'
 
 class Invite extends Command{
   constructor() {
@@ -17,7 +18,11 @@ class Invite extends Command{
   }
 
   execute(client: Client, msg: Message, args: string[], cmd: string) {
-    msg.channel.send('https://discordapp.com/api/oauth2/authorize?client_id=576763498558652425&permissions=0&scope=bot')
+    const embed = new Embed()
+      .setTitle('초대링크')
+      .setDescription('[클릭하면 이동합니다](https://discordapp.com/api/oauth2/authorize?client_id=576763498558652425&permissions=8&scope=bot)')
+    
+    msg.channel.send(embed)
   }
 }
 

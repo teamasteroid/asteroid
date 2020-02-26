@@ -1,7 +1,7 @@
 import { RichEmbed } from 'discord.js'
 
 class Embed extends RichEmbed {
-  constructor (type: string | undefined) {
+  constructor (type?: string) {
     super()
 
     const t = type ? type.trim().toLowerCase() : 'default'
