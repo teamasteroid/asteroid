@@ -2,6 +2,7 @@ import { Collection, Message } from 'discord.js'
 import Command from './Command'
 import config from '../config/config'
 import Asteroid from '../index'
+import Admin from '../config/Admin'
 
 import Invite from './basic/Invite'
 
@@ -45,9 +46,17 @@ class CommandManager {
 
     if(!ce) {
       if(al) {
+        if (al.meta.isAdminOnly && !Admin.isAdmin(msg.author.id)) {
+          return Admin.reject(msg)
+        }
+
         al.execute(Asteroid, msg, args, cmd)
       }
     } else {
+      if (ce.meta.isAdminOnly && !Admin.isAdmin(msg.author.id)) {
+        return Admin.reject(msg)
+      }
+
       ce.execute(Asteroid, msg, args, cmd)
     }
   }
