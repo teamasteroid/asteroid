@@ -1,4 +1,5 @@
 import { Message } from "discord.js"
+import Embed from "../commands/Embed"
 
 class Admin {
   static readonly admins = ['352755226224361482']
@@ -8,7 +9,9 @@ class Admin {
   }
 
   static reject(msg: Message) {
-    msg.channel.send('관리자 전용 기능입니다.')
+    const embed = new Embed('error')
+      .setTitle('관리자 전용 기능입니다.')
+    msg.channel.send(embed)
   }
 }
 
