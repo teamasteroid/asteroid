@@ -54,6 +54,7 @@ class CommandManager {
           return Admin.reject(msg)
         }
 
+        Logger.info(msg.author.id + ' ' + cmd)
         al.execute(Asteroid, msg, args, cmd)
       }
     } else {
@@ -61,6 +62,7 @@ class CommandManager {
         return Admin.reject(msg)
       }
 
+      Logger.info(msg.author.id + ' ' + cmd)
       ce.execute(Asteroid, msg, args, cmd)
     }
   }
