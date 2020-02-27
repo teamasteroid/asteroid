@@ -3,9 +3,9 @@ import Command from './Command'
 import config from '../config/config'
 import Asteroid from '../index'
 import Admin from '../config/Admin'
+import Logger from '../Logger'
 
 import Invite from './basic/Invite'
-import Logger from '../Logger'
 
 class CommandManager {
   static commands: Collection<string, Command>
