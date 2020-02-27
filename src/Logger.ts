@@ -1,4 +1,6 @@
 import 'colors'
+import { appendFileSync } from 'fs'
+import { join } from 'path'
 
 class Logger {
   static getTimeStamp(): string {
@@ -15,7 +17,7 @@ class Logger {
   }
 
   static println(msg: string) {
-
+    appendFileSync(join(__dirname, `/logs/${Logger.getTimeStamp().split(' ')[0].replace('[', '').trim()}.log`), msg + '\n')
   }
 
   static info(msg: string): void {
