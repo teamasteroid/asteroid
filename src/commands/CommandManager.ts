@@ -5,6 +5,7 @@ import Asteroid from '../index'
 import Admin from '../config/Admin'
 
 import Invite from './basic/Invite'
+import Logger from '../Logger'
 
 class CommandManager {
   static commands: Collection<string, Command>
@@ -29,11 +30,11 @@ class CommandManager {
     if (!isNewCat) CommandManager.categories.push(command.meta.category)
 
     CommandManager.commands.set(command.meta.name, command)
-    console.log(`${command.meta.name} command set`)
+    Logger.info(`${command.meta.name} command set`)
 
     command.meta.alias.forEach(a => {
       CommandManager.aliases.set(a, command)
-      console.log(`${a} command set`)
+      Logger.info(`${a} command set`)
     })
   }
 

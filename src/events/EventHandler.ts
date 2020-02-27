@@ -1,4 +1,5 @@
 import { Client } from 'discord.js'
+import Logger from '../Logger'
 
 class EventHandler {
   _name: string
@@ -8,7 +9,7 @@ class EventHandler {
   }
 
   bind(client: Client, e: any) {
-    console.warn('No given event handler')
+    Logger.warn('No Handler Given')
   }
 }
 

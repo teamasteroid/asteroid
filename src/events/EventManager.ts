@@ -1,6 +1,7 @@
 import { Collection } from 'discord.js'
 import EventHandler from './EventHandler'
 import Asteroid from '../index'
+import Logger from '../Logger'
 
 class EventManager {
   static events: Collection<string, EventHandler>
@@ -12,7 +13,7 @@ class EventManager {
   static bind(name: string, handler: EventHandler) {
     EventManager.events.set(name, handler)
     Asteroid.on(name, (e: any) => handler.bind(Asteroid, e))
-    console.log(`${name} event binded`)
+    Logger.info(`${name} event binded`)
   }
 } 
 

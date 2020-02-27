@@ -18,7 +18,7 @@ class Invite extends Command{
   }
 
   execute(client: Client, msg: Message, args: string[], cmd: string) {
-    const embed = new Embed()
+    const embed = new Embed('random')
       .setTitle('초대링크')
       .setDescription('[클릭하면 이동합니다](https://discordapp.com/api/oauth2/authorize?client_id=576763498558652425&permissions=8&scope=bot)')
     
