@@ -25,6 +25,9 @@ class CommandManager {
   }
 
   static register (command: Command) {
+    const isNewCat = !CommandManager.categories.includes(command.meta.category)
+    if (!isNewCat) CommandManager.categories.push(command.meta.category)
+
     CommandManager.commands.set(command.meta.name, command)
     console.log(`${command.meta.name} command set`)
 
