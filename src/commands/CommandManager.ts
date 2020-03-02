@@ -1,9 +1,10 @@
-import { Collection, Message } from 'discord.js'
+import { Collection, Message, Client } from 'discord.js'
 import Command from './Command'
 import config from '../config/config'
 import Asteroid from '../index'
 import Admin from '../config/Admin'
 import Logger from '../Logger'
+import UserManager from '../database/UserManager'
 
 import Invite from './basic/Invite'
 
@@ -54,17 +55,25 @@ class CommandManager {
           return Admin.reject(msg)
         }
 
-        Logger.info(msg.author.id + ' ' + cmd)
-        al.execute(Asteroid, msg, args, cmd)
+        CommandManager.execute(al, Asteroid, msg, args, cmd)
       }
     } else {
       if (ce.meta.isAdminOnly && !Admin.isAdmin(msg.author.id)) {
         return Admin.reject(msg)
       }
 
-      Logger.info(msg.author.id + ' ' + cmd)
-      ce.execute(Asteroid, msg, args, cmd)
+      CommandManager.execute(ce, Asteroid, msg, args, cmd)
     }
+  }
+  
+  static execute(ce: Command, client: Client, msg: Message, args: string[], cmd: string) {
+    UserManager.isNewUser(msg)
+      .then(isNew => {
+        console.dir(isNew)
+      })
+    
+    Logger.info(msg.author.id + ' ' + cmd)
+    ce.execute(Asteroid, msg, args, cmd)
   }
 }
 

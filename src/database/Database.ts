@@ -1,8 +1,8 @@
 import { createConnection, Connection, MysqlError } from 'mysql'
-import config from './config/config'
-import Logger from './Logger'
+import config from '../config/config'
+import Logger from '../Logger'
 import { Message } from 'discord.js'
-import Embed from './commands/Embed'
+import Embed from '../commands/Embed'
 
 class Database {
   dm: Message
