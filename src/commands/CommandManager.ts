@@ -69,7 +69,7 @@ class CommandManager {
   static execute(ce: Command, client: Client, msg: Message, args: string[], cmd: string) {
     UserManager.isNewUser(msg)
       .then(isNew => {
-        console.dir(isNew)
+        if (isNew) UserManager.createNewUser(msg)
       })
     
     Logger.info(msg.author.id + ' ' + cmd)
