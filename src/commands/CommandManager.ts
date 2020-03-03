@@ -8,6 +8,7 @@ import UserManager from '../database/UserManager'
 
 import Invite from './basic/Invite'
 import Discord from './basic/Discord'
+import Help from './basic/Help'
 
 class CommandManager {
   static commands: Collection<string, Command>
@@ -22,7 +23,8 @@ class CommandManager {
 
     CommandManager.commandExecutors = [
       new Invite(),
-      new Discord()
+      new Discord(),
+      new Help(),
     ]
 
     CommandManager.commandExecutors.forEach(ce => CommandManager.register(ce))
@@ -30,7 +32,7 @@ class CommandManager {
 
   static register (command: Command) {
     const isNewCat = !CommandManager.categories.includes(command.meta.category)
-    if (!isNewCat) CommandManager.categories.push(command.meta.category)
+    if (isNewCat) CommandManager.categories.push(command.meta.category)
 
     CommandManager.commands.set(command.meta.name, command)
     Logger.info(`${command.meta.name} command set`)
