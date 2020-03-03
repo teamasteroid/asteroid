@@ -7,6 +7,7 @@ import Logger from '../Logger'
 import UserManager from '../database/UserManager'
 
 import Invite from './basic/Invite'
+import Discord from './basic/Discord'
 
 class CommandManager {
   static commands: Collection<string, Command>
@@ -20,7 +21,8 @@ class CommandManager {
     CommandManager.aliases = new Collection()
 
     CommandManager.commandExecutors = [
-      new Invite()
+      new Invite(),
+      new Discord()
     ]
 
     CommandManager.commandExecutors.forEach(ce => CommandManager.register(ce))
