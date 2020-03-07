@@ -1,6 +1,6 @@
-import { RichEmbed } from 'discord.js'
+import { MessageEmbed } from 'discord.js'
 
-class Embed extends RichEmbed {
+class Embed extends MessageEmbed {
   constructor (type?: string) {
     super()
 

@@ -1,4 +1,4 @@
-import { Client, Message, RichEmbed } from 'discord.js'
+import { Client, Message } from 'discord.js'
 import Command from '../Command'
 import CommandMeta from '../CommandMeta'
 import Embed from '../Embed'
@@ -24,8 +24,6 @@ class Help extends Command {
       let embed = new Embed()
         .setTitle('도움말')
       let i: number = 0
-
-      console.dir(args)
 
       CommandManager.categories.forEach((cat) => {
         if (i > 20) {
@@ -59,7 +57,7 @@ class Help extends Command {
           if (i > 20) {
             msg.channel.send(embed)
 
-            embed = new RichEmbed()
+            embed = new Embed()
               .setTitle('도움말 (계속)')
           }
 
