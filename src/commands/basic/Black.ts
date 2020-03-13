@@ -19,13 +19,39 @@ class Black extends Command{
 
   execute(client: Client, msg: Message, args: string[], cmd: string) {
     if (args.length < 1) {
-      const embed = new Embed('err')
-        .setTitle('실패')
-        .setDescription('플레이어를 지목하십시오.')
+      const embed = new Embed()
+        .setTitle('사용법')
+        .setDescription('black <`@mention`>')
 
       msg.channel.send(embed)
       return
     }
+
+    let user = msg.mentions.users.first()
+
+    if(!user) {
+      if (msg.guild) {
+        client.users.fetch(args[0]).then(idUser => {
+          if(idUser) {
+            user = idUser
+            return true
+          } else {
+            return false
+          }
+        })
+      }
+    }
+
+    if(!user) {
+      const embed = new Embed('err')
+        .setTitle('실패')
+        .setDescription('해당 유저를 찾을 수 없습니다.')
+      
+      msg.channel.send(embed)
+      return
+    }
+
+    msg.channel.send(user.id)
   }
 }
 
