@@ -5,7 +5,7 @@ import Embed from '../Embed'
 import Database from '../../database/Database'
 import UserManager from '../../database/UserManager'
 
-class Black extends Command{
+class Black extends Command {
   constructor() {
     const meta: CommandMeta = {
       name: 'black',

@@ -3,7 +3,7 @@ import Command from '../Command'
 import CommandMeta from '../CommandMeta'
 import Embed from '../Embed'
 
-class Invite extends Command{
+class Invite extends Command {
   constructor() {
     const meta: CommandMeta = {
       name: 'invite',
