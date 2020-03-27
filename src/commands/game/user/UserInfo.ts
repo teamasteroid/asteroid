@@ -11,7 +11,7 @@ class UserInfo extends Command {
       alias: ['ui', '유저', '유저정보'],
       category: 'user',
       isAdminOnly: false,
-      parameter: 0
+      parameter: 1
     }
 
     super(meta)

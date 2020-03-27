@@ -10,6 +10,9 @@ import Invite from './basic/Invite'
 import Discord from './basic/Discord'
 import Help from './basic/Help'
 import Black from './basic/Black'
+import Alias from './basic/Aliases'
+
+import UserInfo from './game/user/UserInfo'
 
 class CommandManager {
   static commands: Collection<string, Command>
@@ -26,7 +29,10 @@ class CommandManager {
       new Invite(),
       new Discord(),
       new Help(),
-      new Black()
+      new Black(),
+      new Alias(),
+
+      new UserInfo(),
     ]
 
     CommandManager.commandExecutors.forEach(ce => CommandManager.register(ce))
